@@ -1,0 +1,2 @@
+# CloudApp
+This repository is the code for the cloud app of the Taco Drone project. It manages the API requests from the Mobile App.
