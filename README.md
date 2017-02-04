@@ -8,3 +8,4 @@ Here is me trying to do it without looking back.
 Alright how about again?
 Losing count and getting mixed up.
 You want to add dot, commit dash "m", and then you push that origin master.
+So what does the "-m" mean in the "commit" command?
