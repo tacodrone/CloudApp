@@ -1,0 +1,707 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+<title>Drone DB Schema</title>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<style type='text/css'>
+body {
+    font-family: 'Segoe UI', 'Lucida sans', Dialog;
+    font-size: 13px;
+    color: #444;
+    margin: 10px;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    caption-side: top;
+    width: auto;
+    margin: 10px 15px 5px 0;
+}
+
+
+.bordered td, .bordered th {
+   background-color: #fafafa;
+   border: 1px solid #D5D5D5;
+   padding: 3px 3px 3px 3px;
+   white-space:pre-wrap!important;
+}
+
+.bordered th {
+    background-color: #f0f0f0;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    padding: 3px 3px 3px 3px;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    color: #333333;
+}
+
+.section-header h2 {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    font-weight: normal;
+    border-top: solid 1px #D5D5D5;
+    border-bottom: solid 1px #D5D5D5;
+    width: 95%;
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 0;
+    color: #4d82b8;
+}
+.section-header div {
+    font-size: 70%;
+    padding-left: 5px;
+}
+
+
+a, a:visited, a:hover, a:active {
+  color: #044282;
+  text-decoration: none;
+}
+
+th > a {
+    color:#858585;
+}
+
+.lg {
+    font-size: 110%;
+}
+
+h1 {
+    font-family: Verdana,Arial,Helvetica;
+    font-weight: normal;
+    color: #4d82b8;
+    margin: 20px 0 10px 0;
+}
+
+</style>
+</head>
+
+<body>
+<div class='svg-container'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' text-rendering='optimizeLegibility'   width='608' height='574' viewbox='0 0 608 574' >
+  <script type='text/ecmascript'>
+  <![CDATA[
+  function hghl(el) { for ( var i in el ){ document.getElementById(el[i]).setAttribute('class','highlight');  }  }
+  function uhghl(el) { for ( var i in el ){ document.getElementById(el[i]).setAttribute('class','scene'); }  } 
+  ]]>
+  </script> 
+
+<style type='text/css'>
+  text                { fill:#000000; font-family: Trebuchet MS, 'Trebuchet MS', Dialog; font-size:12px; }
+  a text:hover        { text-shadow: 0 0 6px #d0ce00; }
+  text.highlight      { text-shadow: 0 0 4px #eac533; }
+  text.colType        { fill:#b3b3b3; }
+  text.relName        { fill:#b09c7c; }
+  path                { stroke:#5c554f; stroke-width:1.15; fill:none; }
+  path.virtual        { stroke:#b7642d; }
+  path.dotted         { stroke-dasharray:4,2; }
+  path.scene          { stroke-width:10; opacity:0;}
+  path.highlight      { stroke-width:5; stroke:#eac533; opacity:0.6;}
+  rect.table          { fill:#ffffff; stroke:#aaa; stroke-width:1;shape-rendering:crispEdges;filter:url(#shadow); }
+  line.delim          { stroke-width:1; shape-rendering:crispEdges; }
+  text.callout        { fill:#000000; font-family: Trebuchet MS, 'Trebuchet MS', Dialog; font-size:12px; }
+  rect.callout        { fill:url(#calloutGradient); stroke:#bebdbd; stroke-width:0.5; filter: url(#shadow);}
+  rect.grp            { stroke:#b1b1b1; stroke-width:1.7; opacity:0.8; }
+</style>
+<defs>
+  <pattern id='layoutBgA' patternUnits='userSpaceOnUse'  width='10' height='20' x='0' y='0' viewBox='0 0 5 10'>  
+     <line x1='-2' y1='1' x2='7' y2='10' stroke='#efefef' stroke-width='.5'/>  
+     <line x1='-2' y1='6' x2='7' y2='15' stroke='#efefef' stroke-width='.5'/>  
+     <line x1='-2' y1='-4' x2='7' y2='5' stroke='#efefef' stroke-width='.5'/>  
+  </pattern>  
+  <radialGradient id='layoutBgB' gradientUnits='userSpaceOnUse' cx='50%' cy='50%' r='75%' fx='46%' fy='22%'>
+     <stop offset='0%' stop-opacity='.2' stop-color='#f5f5f5' />  
+     <stop offset='100%' stop-color='#efefef' />  
+  </radialGradient>
+  <pattern id='layoutBgTr' patternUnits='userSpaceOnUse'  width='300' height='300' x='0' y='0' viewBox='0 0 300 300'>  
+    <text x='-85' y='200' transform='rotate(-45)' style='font-family:Arial;font-size:78px;font-weight:bold;fill:#e7e7e7;'>&#84;&#82;&#73;&#65;&#76;</text> 
+    <text x='-130' y='230' transform='rotate(-45)' style='font-family:Arial;font-size:24px;font-weight:bold;fill:#e7e7e7;'>&#77;ove &#116;he m&#111;use &#111;ver &#116;ables</text> 
+    <text x='-85' y='250' transform='rotate(-45)' style='font-family:Arial;font-size:24px;font-weight:bold;fill:#e7e7e7;'>&#116;o re&#97;d &#116;he c&#111;mmen&#116;s</text> 
+  </pattern>  
+  <linearGradient id='groupUnderTitleLine' x1='0%' y1='0%' x2='100%' y2='0%' >
+          <stop offset='0%' stop-color='#999999' stop-opacity='0.7'/> 
+          <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
+   </linearGradient>
+  <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
+	   <stop offset='0%' stop-color='#ffffff' />
+    <stop offset='100%' stop-color='#f8f6d1' />
+  </radialGradient>
+  <filter id='shadow' width='120%' height='120%'> 
+      <feOffset result='offOut' in='SourceGraphic' dx='1' dy='1' /> 
+      <feColorMatrix result='matrixOut' in='offOut' type='matrix' 
+      values='0.1 0 0 0 0 0 0.1 0 0 0 0 0 0.1 0 0 0 0 0 0.3 0' /> 
+      <feGaussianBlur result='blurOut' in='matrixOut' stdDeviation='3' /> 
+      <feBlend in='SourceGraphic' in2='blurOut' mode='normal' /> 
+    </filter> 
+  <filter id='fkShadow' height='130%'> 
+    <feGaussianBlur in='SourceAlpha' stdDeviation='1.5'/> <!-- stdDeviation is how much to blur -->
+    <feOffset dx='1.2' dy='1.2' result='offsetblur'/> <!-- how much to offset -->
+    <feMerge>
+    <feMergeNode/> <!-- this contains the offset blurred image -->
+    <feMergeNode in='SourceGraphic'/> <!-- this contains the element that the filter is applied to -->
+    </feMerge>
+  </filter>
+  <radialGradient id='legendGradient' fx='5%' fy='5%' r='75%' spreadMethod='pad'>
+          <stop offset='0%' stop-color='#eefbf2' stop-opacity='1'/> 
+          <stop offset='100%' stop-color='#cff9cb' stop-opacity='1' /> 
+   </radialGradient>
+  <symbol id='calloutArrowDown' overflow='visible' >
+      <path d='M 0,0 L 8,12 L 16,0 z' style='fill:#f8f6d1;stroke:none; filter: url(#shadow);' />
+      <path d='M 0,0 L 8,12 L 16,0' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='calloutArrowUp' overflow='visible' >
+      <path d='M 0,16 L 8,4 L 16,16 z' style='fill:#ffffff; stroke:none; filter: url(#shadow);' />
+      <path d='M 0,16 L 8,4 L 16,16' style='stroke:#bebdbd; stroke-width:0.5;' />
+  </symbol>
+  <symbol id='pk' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <path style='fill:#fffa7d;stroke:#765f03;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;'
+        d='M 9.3678877,3.5695485 C 9.1030218,3.2729386 9.0796382,2.7628519 9.3396185,2.4517097 9.5449651,2.1956495 9.9040386,2.0980533 10.199638,2.2169415 10.533525,2.3415459 10.775153,2.706942 10.750675,3.0842709 10.737029,3.3980003 10.541153,3.699122 10.258248,3.8066067 9.966649,3.9250429 9.6169668,3.8418805 9.4008073,3.6062324 9.3894892,3.5943518 9.3785264,3.582104 9.3678886,3.5695487 z M 11.226617,6.9916004 C 11.888137,6.3548946 12.293488,5.4172188 12.311087,4.442353 12.378144,2.7379364 11.248678,1.0541269 9.7322318,0.44767357 8.3887112,-0.1280313 6.7865012,0.26822889 5.8918395,1.4007929 5.080823,2.3839145 4.9336815,3.8452096 5.3635544,5.101615 L 4.3670905,5.315913 C 4.0664984,5.3682645 4.0967703,5.6316724 4.2574957,5.8208829 L 4.9124,6.5655244 4.1543436,7.2512357 3.2136002,7.2163506 3.1674775,8.5586827 2.0406832,8.5086512 1.5965306,8.9299953 1.5471661,10.179833 0.75616674,10.195223 0.2112857,10.758575 0.15354288,11.735988 0.07199052,12.765553 c 0.36440953,0.238225 0.79006967,0.195492 1.44938278,-0.02675 L 6.3033562,8.1282037 6.8217102,8.6765688 C 6.9985465,8.8799427 7.3003699,8.7497574 7.358381,8.5016252 L 7.4938877,7.5084164 c 0.8537488,0.3985387 1.8303125,0.4711541 2.6851793,0.1427713 0.393927,-0.1407258 0.746858,-0.3701772 1.04755,-0.6595873 z'/>
+     <path d='M 6.8014948,6.3102123 0.15369063,13.024481 0.21560535,12.141962 6.0062342,6.2683782 z'
+        style='fill:#ffe5a5;fill-opacity:1;stroke:#854e31;stroke-width:0.06912433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:3.00300009'/>
+    </g>
+  </symbol>
+  <symbol id='unq' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+      <text x='5.8' y='7.4' style='font-size:7px;fill:#8a8a8a;'>1</text>
+    </g>
+  </symbol>
+  <symbol id='idx' overflow='visible' >
+    <g transform='scale(0.99)'>
+      <rect style='fill:#fbea8e;stroke:#7e4d31;stroke-width:0.71934468;stroke-linecap:round;stroke-linejoin:round;'
+         width='2.29' height='8.43' x='7.48' y='-0.76' ry='1.14' transform='matrix(0.701,0.713,-0.727,0.685,0,0)' />
+      <path style='fill:white;stroke:#858585;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;'
+         d='m 26.04,8.64 a 4.13,4.13 0 1 1 -8.26,0 4.13,4.13 0 1 1 8.26,0 z'
+         transform='matrix(1.025,0,0,0.987,-14.690,-3.862)' />
+    </g>
+  </symbol>
+  <symbol id='fk' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+      d='M 12.48,0.33 7.07,0.89 9.067,2.974 0.329,11.731 1.073,12.597 9.811,3.841 11.77,5.78 z' />
+    </g>
+  </symbol>
+  <symbol id='ref' overflow='visible' >
+    <g transform='scale(0.87)'>
+      <path style='fill:#f3e1b7;stroke:#7e471f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.10,12.70 5.31,12.15 3.40,10.06 11.82,1.32 11.11,0.45 2.68,9.19 0.80,7.24 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag0' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#b7d0f6;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag1' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#f4a393;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='flag2' overflow='visible' >
+    <g transform='scale(0.92)'>
+      <path style='fill:#77ec8b;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0.12,12.67 0.16,7.22 C 2.59,7.22 4.13,8.78 9.22,4.22 5.68,4.98 2.53,4.50 0.09,1.80 z'/>
+    </g>
+  </symbol>
+  <symbol id='nn' overflow='visible' >
+  <path style='stroke:#9b3e50;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;'
+          d='M 0,0 3,3 M 0,3 3,0 z'/>
+  </symbol>
+  <symbol id='view' overflow='visible' >
+    <g transform='scale(0.99)'>
+     <line x1='12' y1='6' x2='19' y2='0' stroke='black' stroke-width='0.5' />
+     <line x1='0' y1='6' x2='7' y2='0' stroke='black' stroke-width='0.5' />
+     <circle cx='3' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+     <circle cx='10' cy='6' r='3' fill='#f9ebbc' stroke='black' stroke-width='0.5'/>
+    </g>
+  </symbol>
+  <marker id='arrow01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 8.000,4.000 L 16.000,4.000 L 8.000,0.000 L 16.000,4.000 L 8.000,8.000' />
+  </marker>
+  <marker id='arrow1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 8.000,4.000 L 16.000,4.000 L 8.000,0.000 L 16.000,4.000 L 8.000,8.000' />
+  </marker>
+  <marker id='foot01' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <circle cx='12.00' cy='4.00' r='2.67' style='fill:white;stroke:#5e554d;' />
+    <path d='M 4.00,0.00 L 4.00, 8.00 z' />
+  </marker>
+  <marker id='foot0p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <circle cx='12.00' cy='4.00' r='2.67' style='fill:white;stroke:#5e554d;' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <marker id='foot1' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <path d='M 8.00,0.00 L 8.00, 8.00 z' />
+    <path d='M 4.00,0.00 L 4.00, 8.00 z' />
+  </marker>
+  <marker id='foot1p' viewBox='0 0 16.00 8.00' refX='8.00' refY='4.00' markerUnits='strokeWidth' markerWidth='16.00' markerHeight='8.00' orient='auto'>
+    <path d='M 0.00,4.00 L 16.00,4.00 z' />
+    <path d='M 8.00,0.00 L 8.00, 8.00 z' />
+    <path d='M 0.00,0.00 L 8.00,4.00 L 0.00,8.00' />
+  </marker>
+  <linearGradient id='tbg_bcd5f1' x1='0%' y1='0%' x2='0%' y2='100%' >
+     <stop offset='0%' stop-color='#bcd5f1' /> 
+     <stop offset='100%' stop-color='#bcd5f1' /> 
+  </linearGradient>
+</defs>
+
+<!-- ============= Desktop ============= -->
+<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgB); stroke:#333333; stroke-width:0.5;' />
+<!--<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgTr);' />-->
+<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#333333; stroke-width:0.5;' />
+
+<!-- ============= Legend ============= -->
+<g transform='translate(10,10)'>
+  <rect x='10' y='10' width='270' height='52' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <text x='65' y='33'>Drone DB Schema</text> 
+  <text x='65' y='49' style='fill:#aaaaaa; font-size:11px;'><tspan>Schema comments as mouse-over tooltips.</tspan></text> 
+<g transform="scale(0.75,0.75) translate(10,7)" > <a xlink:href='http://www.dbschema.com'> <rect style="fill:#eb7f2c;stroke:none;shape-rendering:geometricPrecision;" width="13.27" height="11.26" x="40.04" y="59.44" ry="3.14" transform="matrix(0.90187511,-0.43199686,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.27" height="11.26" x="54.83" y="59.57" ry="3.14" transform="matrix(0.90187511,-0.43199686,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.27" height="11.26" x="40.35" y="71.62" ry="3.14" transform="matrix(0.90187511,-0.43199686,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.27" height="11.26" x="54.68" y="71.75" ry="3.14" transform="matrix(0.90187511,-0.43199686,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.35" height="11.20" x="13.48" y="19.67" ry="3.12" transform="matrix(0.84723158,0.53122372,0,1,0,0)" /> <rect style="fill:#eb7f2c;stroke:none;shape-rendering:geometricPrecision;" width="13.35" height="11.20" x="28.36" y="19.80" ry="3.12" transform="matrix(0.84723158,0.53122372,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.35" height="11.20" x="13.79" y="31.78" ry="3.12" transform="matrix(0.84723158,0.53122372,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.35" height="11.20" x="28.21" y="31.92" ry="3.12" transform="matrix(0.84723158,0.53122372,0,1,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.49" height="14.24" x="34.59" y="-9.62" ry="3.97" transform="matrix(0.85815392,0.51339249,-0.91732703,0.39813455,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.49" height="14.24" x="49.63" y="-9.46" ry="3.97" transform="matrix(0.85815392,0.51339249,-0.91732703,0.39813455,0,0)" /> <rect style="fill:#2c49eb;stroke:none;shape-rendering:geometricPrecision;" width="13.49" height="14.24" x="34.90" y="5.77"  ry="3.97" transform="matrix(0.85815392,0.51339249,-0.91732703,0.39813455,0,0)" /> <rect style="fill:#eb7f2c;stroke:none;shape-rendering:geometricPrecision;" width="13.49" height="14.24" x="49.47" y="5.93"  ry="3.97" transform="matrix(0.85815392,0.51339249,-0.91732703,0.39813455,0,0)" /> <title>Generated using DbSchema - www.dbschema.com</title> </a></g>
+</g>
+
+<g transform='translate(0,110)'>
+<!-- ============= Fk 'taco_request_fk_taco_request' ============= -->
+<path id='taco_request_fk_taco_request'  onmouseover="hghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" onmouseout="uhghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" transform='translate(8,0)' class='scene' d='M 448 256 L 448,160' >
+	<title>Fk fk_taco_request
+taco_request ref fulfilled request ( taco_request_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 448 256 L 448,160' ></path>
+<text x='451' y='251' transform='rotate(270 451,251)' title='Fk fk_taco_request
+taco_request ref fulfilled request ( taco_request_id )' class='relName'>taco_request_id</text>
+<!-- ============= Fk 'user_fk_user' ============= -->
+<path id='user_fk_user'  onmouseover="hghl(['user_fk_user','tacodrone.user.user_id','tacodrone.session.user_id'])" onmouseout="uhghl(['user_fk_user','tacodrone.user.user_id','tacodrone.session.user_id'])" transform='translate(8,0)' class='scene' d='M 160 64 L 256,64' >
+	<title>Fk fk_user
+user ref session ( user_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow01)'    d='M 160 64 L 256,64' ></path>
+<text x='169' y='59' transform='rotate(0 169,59)' title='Fk fk_user
+user ref session ( user_id )' class='relName'>user_id</text>
+<!-- ============= Fk 'user_fk_user_0' ============= -->
+<path id='user_fk_user_0'  onmouseover="hghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" onmouseout="uhghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" transform='translate(8,0)' class='scene' d='M 160 160 L 232,160 Q 240,160 240,168 L 240,264 Q 240,272 248,272 L 416,272' >
+	<title>Fk fk_user_0
+user ref taco_request ( user_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 160 160 L 232,160 Q 240,160 240,168 L 240,264 Q 240,272 248,272 L 416,272' ></path>
+<text x='169' y='155' transform='rotate(0 169,155)' title='Fk fk_user_0
+user ref taco_request ( user_id )' class='relName'>user_id</text>
+<!-- ============= Fk 'drone_fk_drone' ============= -->
+<path id='drone_fk_drone'  onmouseover="hghl(['drone_fk_drone','tacodrone.drone.drone_id','tacodrone.session.drone_id'])" onmouseout="uhghl(['drone_fk_drone','tacodrone.drone.drone_id','tacodrone.session.drone_id'])" transform='translate(8,0)' class='scene' d='M 144 224 L 280,224 Q 288,224 288,216 L 288,160' >
+	<title>Fk fk_drone
+drone ref session ( drone_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow01)'    d='M 144 224 L 280,224 Q 288,224 288,216 L 288,160' ></path>
+<text x='153' y='219' transform='rotate(0 153,219)' title='Fk fk_drone
+drone ref session ( drone_id )' class='relName'>drone_id</text>
+<!-- ============= Fk 'drone_fk_drone_0' ============= -->
+<path id='drone_fk_drone_0'  onmouseover="hghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" onmouseout="uhghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" transform='translate(8,0)' class='scene' d='M 144 240 L 424,240 Q 432,240 432,232 L 432,160' >
+	<title>Fk fk_drone_0
+drone ref fulfilled request ( drone_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 144 240 L 424,240 Q 432,240 432,232 L 432,160' ></path>
+<text x='153' y='235' transform='rotate(0 153,235)' title='Fk fk_drone_0
+drone ref fulfilled request ( drone_id )' class='relName'>drone_id</text>
+<!-- ============= Table 'fulfilled request' ============= -->
+<rect class='table' x='416' y='40' width='144' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 416.00 68.00 L 416.00 48.00 Q 416.00 40.00 424.00 40.00 L 552.00 40.00 Q 560.00 40.00 560.00 48.00 L 560.00 68.00 L416.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='416' y='40' width='144' height='112' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='416.000000' y1='68.000000' x2='560.000000' y2='68.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='432.000000' y1='68.000000' x2='432.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='548.000000' y1='68.000000' x2='548.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#fulfilled request'><text x='438' y='60'>fulfilled request</text><title>Table tacodrone.fulfilled request
+Here is the table when the drone fulfills the delivery request.</title></a>
+  <use id='nn' x='418' y='77' xlink:href='#nn'/><a xlink:href='#fulfilled request.fulfilled_request_id'><use id='pk' x='418' y='76' xlink:href='#pk'/><title>Pk pk_fulfilled request ( fulfilled_request_id ) </title></a>
+<a xlink:href='#fulfilled request.fulfilled_request_id'><text id='tacodrone.fulfilled request.fulfilled_request_id' x='435' y='87'>fulfilled_request_id</text><title>fulfilled_request_id
+* int
+Here is the unique identifier for fulfilling the request. It is an Auto Increment field meaning that it doesn't need to be included in the request.</title></a>
+  <a xlink:href='#fulfilled request.status'><text id='tacodrone.fulfilled request.status' x='435' y='103'>status</text><title>status
+enum('not-delivered','delivered') 
+Here is the status of the taco delivery of the drone</title></a>
+  <use id='nn' x='418' y='109' xlink:href='#nn'/><a xlink:href='#fulfilled request.taco_request_id'><use id='unq' x='418' y='108' xlink:href='#unq'/><title>Unq pk_fulfilled request_0 ( taco_request_id ) </title></a>
+<a xlink:href='#fulfilled request.taco_request_id'><text id='tacodrone.fulfilled request.taco_request_id' x='435' y='119' onmouseover="hghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
+* int
+Here is the foriegn key of taco_request.</title></a>
+<a xlink:href='#fulfilled request.taco_request_id'><use id='ref' x='548' y='108' xlink:href='#ref'/><title>Referred by taco_request ( taco_request_id ) 
+Referred by taco_request ( taco_request_id ) </title></a>
+  <use id='nn' x='418' y='125' xlink:href='#nn'/><a xlink:href='#fulfilled request.drone_id'><use id='unq' x='418' y='124' xlink:href='#unq'/><title>Unq pk_fulfilled request_1 ( drone_id ) </title></a>
+<a xlink:href='#fulfilled request.drone_id'><text id='tacodrone.fulfilled request.drone_id' x='435' y='135' onmouseover="hghl(['drone_fk_drone_0','drone_fk_drone_0'])" onmouseout="uhghl(['drone_fk_drone_0','drone_fk_drone_0'])">drone_id</text><title>drone_id
+* int
+Here is the foriegn key for the drone that delivered the particular taco.</title></a>
+<a xlink:href='#fulfilled request.drone_id'><use id='ref' x='548' y='124' xlink:href='#ref'/><title>Referred by drone ( drone_id ) 
+Referred by drone ( drone_id ) </title></a>
+
+<!-- ============= Table 'session' ============= -->
+<rect class='table' x='272' y='40' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 272.00 68.00 L 272.00 48.00 Q 272.00 40.00 280.00 40.00 L 360.00 40.00 Q 368.00 40.00 368.00 48.00 L 368.00 68.00 L272.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='272' y='40' width='96' height='112' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='272.000000' y1='68.000000' x2='368.000000' y2='68.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='288.000000' y1='68.000000' x2='288.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='356.000000' y1='68.000000' x2='356.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#session'><text x='297' y='60'>session</text><title>Table tacodrone.session
+This is the session table. It holds the drone and the user sessions to keep track of who's logged in and who's logged out.</title></a>
+  <use id='nn' x='274' y='77' xlink:href='#nn'/><a xlink:href='#session.session_id'><use id='pk' x='274' y='76' xlink:href='#pk'/><title>Pk pk_session ( session_id ) </title></a>
+<a xlink:href='#session.session_id'><text id='tacodrone.session.session_id' x='291' y='87'>session_id</text><title>session_id
+* int
+Auto Increment session identifier, keeps track of the number of active sessions.</title></a>
+  <use id='nn' x='274' y='93' xlink:href='#nn'/><a xlink:href='#session.token'><text id='tacodrone.session.token' x='291' y='103'>token</text><title>token
+* varchar(255)
+Keeps track of the active session tokens.</title></a>
+  <a xlink:href='#session.user_id'><use id='unq' x='274' y='108' xlink:href='#unq'/><title>Unq pk_session_0 ( user_id ) </title></a>
+<a xlink:href='#session.user_id'><text id='tacodrone.session.user_id' x='291' y='119' onmouseover="hghl(['user_fk_user','user_fk_user'])" onmouseout="uhghl(['user_fk_user','user_fk_user'])">user_id</text><title>user_id
+int
+This is the fk that keeps track of the user_id's. Either this one or the drone_id is mandatory.</title></a>
+<a xlink:href='#session.user_id'><use id='ref' x='356' y='108' xlink:href='#ref'/><title>Referred by user ( user_id ) 
+Referred by user ( user_id ) </title></a>
+  <a xlink:href='#session.drone_id'><use id='unq' x='274' y='124' xlink:href='#unq'/><title>Unq pk_session_1 ( drone_id ) </title></a>
+<a xlink:href='#session.drone_id'><text id='tacodrone.session.drone_id' x='291' y='135' onmouseover="hghl(['drone_fk_drone','drone_fk_drone'])" onmouseout="uhghl(['drone_fk_drone','drone_fk_drone'])">drone_id</text><title>drone_id
+int
+This is the fk that keeps track of the drone_id's. Either this one or the user_id is mandatory.</title></a>
+<a xlink:href='#session.drone_id'><use id='ref' x='356' y='124' xlink:href='#ref'/><title>Referred by drone ( drone_id ) 
+Referred by drone ( drone_id ) </title></a>
+
+<!-- ============= Table 'taco_request' ============= -->
+<rect class='table' x='432' y='264' width='128' height='144' rx='8' ry='8' style='stroke:none'/>
+<path d='M 432.00 292.00 L 432.00 272.00 Q 432.00 264.00 440.00 264.00 L 552.00 264.00 Q 560.00 264.00 560.00 272.00 L 560.00 292.00 L432.00 292.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='432' y='264' width='128' height='144' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='432.000000' y1='292.000000' x2='560.000000' y2='292.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='448.000000' y1='292.000000' x2='448.000000' y2='408.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='548.000000' y1='292.000000' x2='548.000000' y2='408.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#taco_request'><text x='456' y='284'>taco_request</text><title>Table tacodrone.taco_request
+All the user requests to deliver tacos are kept in this database.</title></a>
+  <use id='nn' x='434' y='301' xlink:href='#nn'/><a xlink:href='#taco_request.taco_request_id'><use id='pk' x='434' y='300' xlink:href='#pk'/><title>Pk pk_taco_request ( taco_request_id ) </title></a>
+<a xlink:href='#taco_request.taco_request_id'><text id='tacodrone.taco_request.taco_request_id' x='451' y='311' onmouseover="hghl(['taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
+* int
+This is a unique identifier of the taco request. It helps uniquely identify taco requests so that the drone can deliver tacos more effectively.</title></a>
+<a xlink:href='#taco_request.taco_request_id'><use id='fk' x='548' y='300' xlink:href='#fk'/><title>References fulfilled request ( taco_request_id ) </title></a>
+  <use id='nn' x='434' y='317' xlink:href='#nn'/><a xlink:href='#taco_request.longitude'><text id='tacodrone.taco_request.longitude' x='451' y='327'>longitude</text><title>longitude
+* float(20,17)
+This is the longitude of the delivery.</title></a>
+  <use id='nn' x='434' y='333' xlink:href='#nn'/><a xlink:href='#taco_request.latitude'><text id='tacodrone.taco_request.latitude' x='451' y='343'>latitude</text><title>latitude
+* float(20,17)
+This is the latitude for the delivery.</title></a>
+  <use id='nn' x='434' y='349' xlink:href='#nn'/><a xlink:href='#taco_request.created'><text id='tacodrone.taco_request.created' x='451' y='359'>created</text><title>created
+* timestamp
+This is the timestamp that the request was created, for delivery purposes.</title></a>
+  <use id='nn' x='434' y='365' xlink:href='#nn'/><a xlink:href='#taco_request.taco_type'><text id='tacodrone.taco_request.taco_type' x='451' y='375'>taco_type</text><title>taco_type
+* enum('beef','vegetarian','chicken') 
+This is the taco_type enumerated type.</title></a>
+  <use id='nn' x='434' y='381' xlink:href='#nn'/><a xlink:href='#taco_request.user_id'><use id='unq' x='434' y='380' xlink:href='#unq'/><title>Unq pk_taco_request_0 ( user_id ) </title></a>
+<a xlink:href='#taco_request.user_id'><text id='tacodrone.taco_request.user_id' x='451' y='391' onmouseover="hghl(['user_fk_user_0','user_fk_user_0'])" onmouseout="uhghl(['user_fk_user_0','user_fk_user_0'])">user_id</text><title>user_id
+* int
+This is a foriegn key that links to the user database.</title></a>
+<a xlink:href='#taco_request.user_id'><use id='ref' x='548' y='380' xlink:href='#ref'/><title>Referred by user ( user_id ) 
+Referred by user ( user_id ) </title></a>
+
+<!-- ============= Table 'user' ============= -->
+<rect class='table' x='48' y='40' width='112' height='128' rx='8' ry='8' style='stroke:none'/>
+<path d='M 48.00 68.00 L 48.00 48.00 Q 48.00 40.00 56.00 40.00 L 152.00 40.00 Q 160.00 40.00 160.00 48.00 L 160.00 68.00 L48.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='48' y='40' width='112' height='128' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='48.000000' y1='68.000000' x2='160.000000' y2='68.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='64.000000' y1='68.000000' x2='64.000000' y2='168.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='148.000000' y1='68.000000' x2='148.000000' y2='168.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#user'><text x='88' y='60'>user</text><title>Table tacodrone.user
+This is the table that handles all the data for the users that are to use our mobile app to order tacos.</title></a>
+  <use id='nn' x='50' y='77' xlink:href='#nn'/><a xlink:href='#user.user_id'><use id='pk' x='50' y='76' xlink:href='#pk'/><title>Pk pk_user ( user_id ) </title></a>
+<a xlink:href='#user.user_id'><text id='tacodrone.user.user_id' x='67' y='87' onmouseover="hghl(['user_fk_user','user_fk_user_0'])" onmouseout="uhghl(['user_fk_user','user_fk_user_0'])">user_id</text><title>user_id
+* int
+The user_id uniquely identifies Users. Its an AutoIncrement field meaning that on user creation it need not be specified.</title></a>
+<a xlink:href='#user.user_id'><use id='fk' x='148' y='76' xlink:href='#fk'/><title>References session ( user_id ) 
+References taco_request ( user_id ) </title></a>
+  <use id='nn' x='50' y='93' xlink:href='#nn'/><a xlink:href='#user.facebook_id'><text id='tacodrone.user.facebook_id' x='67' y='103'>facebook_id</text><title>facebook_id
+* varchar(255)
+This field stored the value of the facebook id for the user.</title></a>
+  <use id='nn' x='50' y='109' xlink:href='#nn'/><a xlink:href='#user.first_name'><text id='tacodrone.user.first_name' x='67' y='119'>first_name</text><title>first_name
+* varchar(35)
+Stores the first name of the user.</title></a>
+  <use id='nn' x='50' y='125' xlink:href='#nn'/><a xlink:href='#user.last_name'><text id='tacodrone.user.last_name' x='67' y='135'>last_name</text><title>last_name
+* varchar(35)
+Stores the last name of the user.</title></a>
+  <use id='nn' x='50' y='141' xlink:href='#nn'/><a xlink:href='#user.email'><text id='tacodrone.user.email' x='67' y='151'>email</text><title>email
+* varchar(100)
+Here is the email of the user.</title></a>
+
+<!-- ============= Table 'drone' ============= -->
+<rect class='table' x='48' y='200' width='96' height='80' rx='8' ry='8' style='stroke:none'/>
+<path d='M 48.00 228.00 L 48.00 208.00 Q 48.00 200.00 56.00 200.00 L 136.00 200.00 Q 144.00 200.00 144.00 208.00 L 144.00 228.00 L48.00 228.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='48' y='200' width='96' height='80' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='48.000000' y1='228.000000' x2='144.000000' y2='228.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='64.000000' y1='228.000000' x2='64.000000' y2='280.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='132.000000' y1='228.000000' x2='132.000000' y2='280.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#drone'><text x='76' y='220'>drone</text><title>Table tacodrone.drone
+Here is the table defining the attributes for a drone.</title></a>
+  <use id='nn' x='50' y='237' xlink:href='#nn'/><a xlink:href='#drone.drone_id'><use id='pk' x='50' y='236' xlink:href='#pk'/><title>Pk pk_drone ( drone_id ) </title></a>
+<a xlink:href='#drone.drone_id'><text id='tacodrone.drone.drone_id' x='67' y='247' onmouseover="hghl(['drone_fk_drone','drone_fk_drone_0'])" onmouseout="uhghl(['drone_fk_drone','drone_fk_drone_0'])">drone_id</text><title>drone_id
+* int
+Here is the drone identifier. Its an Auto Increment field so it doesn't need to be included in the creation of a new drone entry.</title></a>
+<a xlink:href='#drone.drone_id'><use id='fk' x='132' y='236' xlink:href='#fk'/><title>References session ( drone_id ) 
+References fulfilled request ( drone_id ) </title></a>
+  <use id='nn' x='50' y='253' xlink:href='#nn'/><a xlink:href='#drone.password'><text id='tacodrone.drone.password' x='67' y='263'>password</text><title>password
+* varchar(255)
+Here is the access password for the drone, to make it autonomously deliver.</title></a>
+
+</g></svg></div>
+
+
+<br/><br/>
+<div class='section-header'><a name='fulfilled request'><h2>Table fulfilled request</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>Here is the table when the drone fulfills the delivery request&#46; </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='fulfilled request.fulfilled_request_id'>fulfilled&#95;request&#95;id</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> Here is the unique identifier for fulfilling the request&#46; It is an Auto Increment field meaning that it doesn&#39;t need to be included in the request&#46; </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='fulfilled request.status'>status</a></td>
+		<td> enum   </td>
+		<td> Here is the status of the taco delivery of the drone </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='fulfilled request.taco_request_id'>taco&#95;request&#95;id</a></td>
+		<td> int   </td>
+		<td> Here is the foriegn key of taco&#95;request&#46; </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='fulfilled request.drone_id'>drone&#95;id</a></td>
+		<td> int   </td>
+		<td> Here is the foriegn key for the drone that delivered the particular taco&#46; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;fulfilled request</td>
+		<td> ON fulfilled&#95;request&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;0</td>
+		<td> ON taco&#95;request&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;1</td>
+		<td> ON drone&#95;id</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='session'><h2>Table session</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>This is the session table&#46; It holds the drone and the user sessions to keep track of who&#39;s logged in and who&#39;s logged out&#46; </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+		<td><a name='session.session_id'>session&#95;id</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> Auto Increment session identifier&#44; keeps track of the number of active sessions&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='session.token'>token</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td> Keeps track of the active session tokens&#46; </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='session.user_id'>user&#95;id</a></td>
+		<td> int   </td>
+		<td> This is the fk that keeps track of the user&#95;id&#39;s&#46; Either this one or the drone&#95;id is mandatory&#46; </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='session.drone_id'>drone&#95;id</a></td>
+		<td> int   </td>
+		<td> This is the fk that keeps track of the drone&#95;id&#39;s&#46; Either this one or the user&#95;id is mandatory&#46; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;session</td>
+		<td> ON session&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;0</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;1</td>
+		<td> ON drone&#95;id</td>
+		<td>  </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='taco_request'><h2>Table taco_request</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>All the user requests to deliver tacos are kept in this database&#46; </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='taco_request.taco_request_id'>taco&#95;request&#95;id</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> This is a unique identifier of the taco request&#46; It helps uniquely identify taco requests so that the drone can deliver tacos more effectively&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='taco_request.longitude'>longitude</a></td>
+		<td> float&#40; 20&#44; 17 &#41;   </td>
+		<td> This is the longitude of the delivery&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='taco_request.latitude'>latitude</a></td>
+		<td> float&#40; 20&#44; 17 &#41;   </td>
+		<td> This is the latitude for the delivery&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='taco_request.created'>created</a></td>
+		<td> timestamp   </td>
+		<td> This is the timestamp that the request was created&#44; for delivery purposes&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='taco_request.taco_type'>taco&#95;type</a></td>
+		<td> enum   </td>
+		<td> This is the taco&#95;type enumerated type&#46; </td>
+	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td><a name='taco_request.user_id'>user&#95;id</a></td>
+		<td> int   </td>
+		<td> This is a foriegn key that links to the user database&#46; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;taco&#95;request</td>
+		<td> ON taco&#95;request&#95;id</td>
+		<td>  </td>
+	</tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;taco&#95;request&#95;0</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_taco_request</td>
+		<td > ( taco&#95;request&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (taco&#95;request&#95;id) </td>
+		<td> Here is the foriegn&#95;key for the taco&#95;request&#46; </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='user'><h2>Table user</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>This is the table that handles all the data for the users that are to use our mobile app to order tacos&#46; </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='user.user_id'>user&#95;id</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> The user&#95;id uniquely identifies Users&#46; Its an AutoIncrement field meaning that on user creation it need not be specified&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='user.facebook_id'>facebook&#95;id</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td> This field stored the value of the facebook id for the user&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='user.first_name'>first&#95;name</a></td>
+		<td> varchar&#40; 35 &#41;   </td>
+		<td> Stores the first name of the user&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='user.last_name'>last&#95;name</a></td>
+		<td> varchar&#40; 35 &#41;   </td>
+		<td> Stores the last name of the user&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='user.email'>email</a></td>
+		<td> varchar&#40; 100 &#41;   </td>
+		<td> Here is the email of the user&#46; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;user</td>
+		<td> ON user&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user</td>
+		<td > ( user&#95;id ) ref <a href='#session'>session</a> (user&#95;id) </td>
+		<td> This foriegn key contains the value of the user&#95;id from the user database&#46; </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user_0</td>
+		<td > ( user&#95;id ) ref <a href='#taco&#95;request'>taco&#95;request</a> (user&#95;id) </td>
+		<td> Foriegn Key for the user&#95;id in the taco requests database&#46; </td>
+	</tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='drone'><h2>Table drone</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>Here is the table defining the attributes for a drone&#46; </td></tr>
+</thead>
+<tbody>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='drone.drone_id'>drone&#95;id</a></td>
+		<td> int  AUTOINCREMENT  </td>
+		<td> Here is the drone identifier&#46; Its an Auto Increment field so it doesn&#39;t need to be included in the creation of a new drone entry&#46; </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='drone.password'>password</a></td>
+		<td> varchar&#40; 255 &#41;   </td>
+		<td> Here is the access password for the drone&#44; to make it autonomously deliver&#46; </td>
+	</tr>
+<tr><th colspan='4'>Indexes</th></tr>
+	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;drone</td>
+		<td> ON drone&#95;id</td>
+		<td>  </td>
+	</tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone</td>
+		<td > ( drone&#95;id ) ref <a href='#session'>session</a> (drone&#95;id) </td>
+		<td> This foriegn key refers to the drone&#95;id from the drone DB&#46; </td>
+	</tr>
+	<tr>
+		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone_0</td>
+		<td > ( drone&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (drone&#95;id) </td>
+		<td> Here is the foriegn key for the drone object </td>
+	</tr>
+</tbody>
+</table>
