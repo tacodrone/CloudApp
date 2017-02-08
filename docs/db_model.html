@@ -81,7 +81,7 @@ h1 {
 
 <body>
 <div class='svg-container'>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' text-rendering='optimizeLegibility'   width='608' height='574' viewbox='0 0 608 574' >
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' text-rendering='optimizeLegibility'   width='736' height='654' viewbox='0 0 736 654' >
   <script type='text/ecmascript'>
   <![CDATA[
   function hghl(el) { for ( var i in el ){ document.getElementById(el[i]).setAttribute('class','highlight');  }  }
@@ -126,7 +126,7 @@ h1 {
           <stop offset='100%' stop-color='#999999' stop-opacity='0' /> 
    </linearGradient>
   <radialGradient id='calloutGradient' cx='25%' cy='20%' r='80%' fx='10%' fy='10%'>
-	   <stop offset='0%' stop-color='#ffffff' />
+     <stop offset='0%' stop-color='#ffffff' />
     <stop offset='100%' stop-color='#f8f6d1' />
   </radialGradient>
   <filter id='shadow' width='120%' height='120%'> 
@@ -258,9 +258,8 @@ h1 {
 </defs>
 
 <!-- ============= Desktop ============= -->
-<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgB); stroke:#333333; stroke-width:0.5;' />
-<!--<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgTr);' />-->
-<rect x='1' y='1' width='606' height='572' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#333333; stroke-width:0.5;' />
+<rect x='1' y='1' width='734' height='652' rx='8' ry='8' style='fill:url(#layoutBgB); stroke:#333333; stroke-width:0.5;' />
+<rect x='1' y='1' width='734' height='652' rx='8' ry='8' style='fill:url(#layoutBgA); stroke:#333333; stroke-width:0.5;' />
 
 <!-- ============= Legend ============= -->
 <g transform='translate(10,10)'>
@@ -271,75 +270,70 @@ h1 {
 </g>
 
 <g transform='translate(0,110)'>
-<!-- ============= Fk 'taco_request_fk_taco_request' ============= -->
-<path id='taco_request_fk_taco_request'  onmouseover="hghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" onmouseout="uhghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" transform='translate(8,0)' class='scene' d='M 448 256 L 448,160' >
-	<title>Fk fk_taco_request
-taco_request ref fulfilled request ( taco_request_id )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 448 256 L 448,160' ></path>
-<text x='451' y='251' transform='rotate(270 451,251)' title='Fk fk_taco_request
-taco_request ref fulfilled request ( taco_request_id )' class='relName'>taco_request_id</text>
 <!-- ============= Fk 'user_fk_user' ============= -->
 <path id='user_fk_user'  onmouseover="hghl(['user_fk_user','tacodrone.user.user_id','tacodrone.session.user_id'])" onmouseout="uhghl(['user_fk_user','tacodrone.user.user_id','tacodrone.session.user_id'])" transform='translate(8,0)' class='scene' d='M 160 64 L 256,64' >
-	<title>Fk fk_user
+  <title>Fk fk_user
 user ref session ( user_id )</title>
 </path>
 <path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow01)'    d='M 160 64 L 256,64' ></path>
 <text x='169' y='59' transform='rotate(0 169,59)' title='Fk fk_user
 user ref session ( user_id )' class='relName'>user_id</text>
 <!-- ============= Fk 'user_fk_user_0' ============= -->
-<path id='user_fk_user_0'  onmouseover="hghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" onmouseout="uhghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" transform='translate(8,0)' class='scene' d='M 160 160 L 232,160 Q 240,160 240,168 L 240,264 Q 240,272 248,272 L 416,272' >
-	<title>Fk fk_user_0
+<path id='user_fk_user_0'  onmouseover="hghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" onmouseout="uhghl(['user_fk_user_0','tacodrone.user.user_id','tacodrone.taco_request.user_id'])" transform='translate(8,0)' class='scene' d='M 160 160 L 232,160 Q 240,160 240,168 L 240,344 Q 240,352 248,352 L 544,352' >
+  <title>Fk fk_user_0
 user ref taco_request ( user_id )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 160 160 L 232,160 Q 240,160 240,168 L 240,264 Q 240,272 248,272 L 416,272' ></path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 160 160 L 232,160 Q 240,160 240,168 L 240,344 Q 240,352 248,352 L 544,352' ></path>
 <text x='169' y='155' transform='rotate(0 169,155)' title='Fk fk_user_0
 user ref taco_request ( user_id )' class='relName'>user_id</text>
 <!-- ============= Fk 'drone_fk_drone' ============= -->
 <path id='drone_fk_drone'  onmouseover="hghl(['drone_fk_drone','tacodrone.drone.drone_id','tacodrone.session.drone_id'])" onmouseout="uhghl(['drone_fk_drone','tacodrone.drone.drone_id','tacodrone.session.drone_id'])" transform='translate(8,0)' class='scene' d='M 144 224 L 280,224 Q 288,224 288,216 L 288,160' >
-	<title>Fk fk_drone
+  <title>Fk fk_drone
 drone ref session ( drone_id )</title>
 </path>
 <path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow01)'    d='M 144 224 L 280,224 Q 288,224 288,216 L 288,160' ></path>
 <text x='153' y='219' transform='rotate(0 153,219)' title='Fk fk_drone
 drone ref session ( drone_id )' class='relName'>drone_id</text>
 <!-- ============= Fk 'drone_fk_drone_0' ============= -->
-<path id='drone_fk_drone_0'  onmouseover="hghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" onmouseout="uhghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" transform='translate(8,0)' class='scene' d='M 144 240 L 424,240 Q 432,240 432,232 L 432,160' >
-	<title>Fk fk_drone_0
+<path id='drone_fk_drone_0'  onmouseover="hghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" onmouseout="uhghl(['drone_fk_drone_0','tacodrone.drone.drone_id','tacodrone.fulfilled request.drone_id'])" transform='translate(8,0)' class='scene' d='M 144 240 L 248,240 Q 256,240 256,232 L 256,184 Q 256,176 264,176 L 408,176 Q 416,176 416,168 L 416,160' >
+  <title>Fk fk_drone_0
 drone ref fulfilled request ( drone_id )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 144 240 L 424,240 Q 432,240 432,232 L 432,160' ></path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 144 240 L 248,240 Q 256,240 256,232 L 256,184 Q 256,176 264,176 L 408,176 Q 416,176 416,168 L 416,160' ></path>
 <text x='153' y='235' transform='rotate(0 153,235)' title='Fk fk_drone_0
 drone ref fulfilled request ( drone_id )' class='relName'>drone_id</text>
-<!-- ============= Table 'fulfilled request' ============= -->
-<rect class='table' x='416' y='40' width='144' height='112' rx='8' ry='8' style='stroke:none'/>
-<path d='M 416.00 68.00 L 416.00 48.00 Q 416.00 40.00 424.00 40.00 L 552.00 40.00 Q 560.00 40.00 560.00 48.00 L 560.00 68.00 L416.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
-<rect class='table' x='416' y='40' width='144' height='112' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
-<line class='delim' x1='416.000000' y1='68.000000' x2='560.000000' y2='68.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='432.000000' y1='68.000000' x2='432.000000' y2='152.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='548.000000' y1='68.000000' x2='548.000000' y2='152.000000' style='stroke:#a0bee0'/>
-<a xlink:href='#fulfilled request'><text x='438' y='60'>fulfilled request</text><title>Table tacodrone.fulfilled request
-Here is the table when the drone fulfills the delivery request.</title></a>
-  <use id='nn' x='418' y='77' xlink:href='#nn'/><a xlink:href='#fulfilled request.fulfilled_request_id'><use id='pk' x='418' y='76' xlink:href='#pk'/><title>Pk pk_fulfilled request ( fulfilled_request_id ) </title></a>
-<a xlink:href='#fulfilled request.fulfilled_request_id'><text id='tacodrone.fulfilled request.fulfilled_request_id' x='435' y='87'>fulfilled_request_id</text><title>fulfilled_request_id
-* int
-Here is the unique identifier for fulfilling the request. It is an Auto Increment field meaning that it doesn't need to be included in the request.</title></a>
-  <a xlink:href='#fulfilled request.status'><text id='tacodrone.fulfilled request.status' x='435' y='103'>status</text><title>status
-enum('not-delivered','delivered') 
-Here is the status of the taco delivery of the drone</title></a>
-  <use id='nn' x='418' y='109' xlink:href='#nn'/><a xlink:href='#fulfilled request.taco_request_id'><use id='unq' x='418' y='108' xlink:href='#unq'/><title>Unq pk_fulfilled request_0 ( taco_request_id ) </title></a>
-<a xlink:href='#fulfilled request.taco_request_id'><text id='tacodrone.fulfilled request.taco_request_id' x='435' y='119' onmouseover="hghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
-* int
-Here is the foriegn key of taco_request.</title></a>
-<a xlink:href='#fulfilled request.taco_request_id'><use id='ref' x='548' y='108' xlink:href='#ref'/><title>Referred by taco_request ( taco_request_id ) 
-Referred by taco_request ( taco_request_id ) </title></a>
-  <use id='nn' x='418' y='125' xlink:href='#nn'/><a xlink:href='#fulfilled request.drone_id'><use id='unq' x='418' y='124' xlink:href='#unq'/><title>Unq pk_fulfilled request_1 ( drone_id ) </title></a>
-<a xlink:href='#fulfilled request.drone_id'><text id='tacodrone.fulfilled request.drone_id' x='435' y='135' onmouseover="hghl(['drone_fk_drone_0','drone_fk_drone_0'])" onmouseout="uhghl(['drone_fk_drone_0','drone_fk_drone_0'])">drone_id</text><title>drone_id
-* int
-Here is the foriegn key for the drone that delivered the particular taco.</title></a>
-<a xlink:href='#fulfilled request.drone_id'><use id='ref' x='548' y='124' xlink:href='#ref'/><title>Referred by drone ( drone_id ) 
-Referred by drone ( drone_id ) </title></a>
-
+<!-- ============= Fk 'location_fk_location' ============= -->
+<path id='location_fk_location'  onmouseover="hghl(['location_fk_location','tacodrone.location.location_id','tacodrone.drone.location_id'])" onmouseout="uhghl(['location_fk_location','tacodrone.location.location_id','tacodrone.drone.location_id'])" transform='translate(8,0)' class='scene' d='M 272 256 L 144,256' >
+  <title>Fk fk_location
+location ref drone ( location_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 272 256 L 144,256' ></path>
+<text x='216' y='251' transform='rotate(0 216,251)' title='Fk fk_location
+location ref drone ( location_id )' class='relName'>location_id</text>
+<!-- ============= Fk 'location_fk_location_0' ============= -->
+<path id='location_fk_location_0'  onmouseover="hghl(['location_fk_location_0','tacodrone.location.location_id','tacodrone.coordinates.location_id'])" onmouseout="uhghl(['location_fk_location_0','tacodrone.location.location_id','tacodrone.coordinates.location_id'])" transform='translate(8,0)' class='scene' d='M 272 304 L 168,304 Q 160,304 160,312 L 160,368' >
+  <title>Fk fk_location_0
+location ref coordinates ( location_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 272 304 L 168,304 Q 160,304 160,312 L 160,368' ></path>
+<text x='216' y='299' transform='rotate(0 216,299)' title='Fk fk_location_0
+location ref coordinates ( location_id )' class='relName'>location_id</text>
+<!-- ============= Fk 'location_fk_location_1' ============= -->
+<path id='location_fk_location_1'  onmouseover="hghl(['location_fk_location_1','tacodrone.location.location_id','tacodrone.taco.location_id'])" onmouseout="uhghl(['location_fk_location_1','tacodrone.location.location_id','tacodrone.taco.location_id'])" transform='translate(8,0)' class='scene' d='M 416 272 L 600,272 Q 608,272 608,264 L 608,176' >
+  <title>Fk fk_location_1
+location ref taco ( location_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 416 272 L 600,272 Q 608,272 608,264 L 608,176' ></path>
+<text x='425' y='267' transform='rotate(0 425,267)' title='Fk fk_location_1
+location ref taco ( location_id )' class='relName'>location_id</text>
+<!-- ============= Fk 'taco_request_fk_taco_request' ============= -->
+<path id='taco_request_fk_taco_request'  onmouseover="hghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" onmouseout="uhghl(['taco_request_fk_taco_request','tacodrone.taco_request.taco_request_id','tacodrone.fulfilled request.taco_request_id'])" transform='translate(8,0)' class='scene' d='M 544 304 L 536,304 Q 528,304 528,296 L 528,160' >
+  <title>Fk fk_taco_request
+taco_request ref fulfilled request ( taco_request_id )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 544 304 L 536,304 Q 528,304 528,296 L 528,160' ></path>
+<text x='459' y='299' transform='rotate(0 459,299)' title='Fk fk_taco_request
+taco_request ref fulfilled request ( taco_request_id )' class='relName'>taco_request_id</text>
 <!-- ============= Table 'session' ============= -->
 <rect class='table' x='272' y='40' width='96' height='112' rx='8' ry='8' style='stroke:none'/>
 <path d='M 272.00 68.00 L 272.00 48.00 Q 272.00 40.00 280.00 40.00 L 360.00 40.00 Q 368.00 40.00 368.00 48.00 L 368.00 68.00 L272.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
@@ -368,39 +362,6 @@ int
 This is the fk that keeps track of the drone_id's. Either this one or the user_id is mandatory.</title></a>
 <a xlink:href='#session.drone_id'><use id='ref' x='356' y='124' xlink:href='#ref'/><title>Referred by drone ( drone_id ) 
 Referred by drone ( drone_id ) </title></a>
-
-<!-- ============= Table 'taco_request' ============= -->
-<rect class='table' x='432' y='264' width='128' height='144' rx='8' ry='8' style='stroke:none'/>
-<path d='M 432.00 292.00 L 432.00 272.00 Q 432.00 264.00 440.00 264.00 L 552.00 264.00 Q 560.00 264.00 560.00 272.00 L 560.00 292.00 L432.00 292.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
-<rect class='table' x='432' y='264' width='128' height='144' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
-<line class='delim' x1='432.000000' y1='292.000000' x2='560.000000' y2='292.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='448.000000' y1='292.000000' x2='448.000000' y2='408.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='548.000000' y1='292.000000' x2='548.000000' y2='408.000000' style='stroke:#a0bee0'/>
-<a xlink:href='#taco_request'><text x='456' y='284'>taco_request</text><title>Table tacodrone.taco_request
-All the user requests to deliver tacos are kept in this database.</title></a>
-  <use id='nn' x='434' y='301' xlink:href='#nn'/><a xlink:href='#taco_request.taco_request_id'><use id='pk' x='434' y='300' xlink:href='#pk'/><title>Pk pk_taco_request ( taco_request_id ) </title></a>
-<a xlink:href='#taco_request.taco_request_id'><text id='tacodrone.taco_request.taco_request_id' x='451' y='311' onmouseover="hghl(['taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
-* int
-This is a unique identifier of the taco request. It helps uniquely identify taco requests so that the drone can deliver tacos more effectively.</title></a>
-<a xlink:href='#taco_request.taco_request_id'><use id='fk' x='548' y='300' xlink:href='#fk'/><title>References fulfilled request ( taco_request_id ) </title></a>
-  <use id='nn' x='434' y='317' xlink:href='#nn'/><a xlink:href='#taco_request.longitude'><text id='tacodrone.taco_request.longitude' x='451' y='327'>longitude</text><title>longitude
-* float(20,17)
-This is the longitude of the delivery.</title></a>
-  <use id='nn' x='434' y='333' xlink:href='#nn'/><a xlink:href='#taco_request.latitude'><text id='tacodrone.taco_request.latitude' x='451' y='343'>latitude</text><title>latitude
-* float(20,17)
-This is the latitude for the delivery.</title></a>
-  <use id='nn' x='434' y='349' xlink:href='#nn'/><a xlink:href='#taco_request.created'><text id='tacodrone.taco_request.created' x='451' y='359'>created</text><title>created
-* timestamp
-This is the timestamp that the request was created, for delivery purposes.</title></a>
-  <use id='nn' x='434' y='365' xlink:href='#nn'/><a xlink:href='#taco_request.taco_type'><text id='tacodrone.taco_request.taco_type' x='451' y='375'>taco_type</text><title>taco_type
-* enum('beef','vegetarian','chicken') 
-This is the taco_type enumerated type.</title></a>
-  <use id='nn' x='434' y='381' xlink:href='#nn'/><a xlink:href='#taco_request.user_id'><use id='unq' x='434' y='380' xlink:href='#unq'/><title>Unq pk_taco_request_0 ( user_id ) </title></a>
-<a xlink:href='#taco_request.user_id'><text id='tacodrone.taco_request.user_id' x='451' y='391' onmouseover="hghl(['user_fk_user_0','user_fk_user_0'])" onmouseout="uhghl(['user_fk_user_0','user_fk_user_0'])">user_id</text><title>user_id
-* int
-This is a foriegn key that links to the user database.</title></a>
-<a xlink:href='#taco_request.user_id'><use id='ref' x='548' y='380' xlink:href='#ref'/><title>Referred by user ( user_id ) 
-Referred by user ( user_id ) </title></a>
 
 <!-- ============= Table 'user' ============= -->
 <rect class='table' x='48' y='40' width='112' height='128' rx='8' ry='8' style='stroke:none'/>
@@ -431,12 +392,12 @@ Stores the last name of the user.</title></a>
 Here is the email of the user.</title></a>
 
 <!-- ============= Table 'drone' ============= -->
-<rect class='table' x='48' y='200' width='96' height='80' rx='8' ry='8' style='stroke:none'/>
+<rect class='table' x='48' y='200' width='96' height='96' rx='8' ry='8' style='stroke:none'/>
 <path d='M 48.00 228.00 L 48.00 208.00 Q 48.00 200.00 56.00 200.00 L 136.00 200.00 Q 144.00 200.00 144.00 208.00 L 144.00 228.00 L48.00 228.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
-<rect class='table' x='48' y='200' width='96' height='80' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<rect class='table' x='48' y='200' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
 <line class='delim' x1='48.000000' y1='228.000000' x2='144.000000' y2='228.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='64.000000' y1='228.000000' x2='64.000000' y2='280.000000' style='stroke:#a0bee0'/>
-<line class='delim' x1='132.000000' y1='228.000000' x2='132.000000' y2='280.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='64.000000' y1='228.000000' x2='64.000000' y2='296.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='132.000000' y1='228.000000' x2='132.000000' y2='296.000000' style='stroke:#a0bee0'/>
 <a xlink:href='#drone'><text x='76' y='220'>drone</text><title>Table tacodrone.drone
 Here is the table defining the attributes for a drone.</title></a>
   <use id='nn' x='50' y='237' xlink:href='#nn'/><a xlink:href='#drone.drone_id'><use id='pk' x='50' y='236' xlink:href='#pk'/><title>Pk pk_drone ( drone_id ) </title></a>
@@ -448,57 +409,152 @@ References fulfilled request ( drone_id ) </title></a>
   <use id='nn' x='50' y='253' xlink:href='#nn'/><a xlink:href='#drone.password'><text id='tacodrone.drone.password' x='67' y='263'>password</text><title>password
 * varchar(255)
 Here is the access password for the drone, to make it autonomously deliver.</title></a>
+  <use id='nn' x='50' y='269' xlink:href='#nn'/><a xlink:href='#drone.location_id'><use id='unq' x='50' y='268' xlink:href='#unq'/><title>Unq pk_drone_0 ( location_id ) </title></a>
+<a xlink:href='#drone.location_id'><text id='tacodrone.drone.location_id' x='67' y='279' onmouseover="hghl(['location_fk_location','location_fk_location'])" onmouseout="uhghl(['location_fk_location','location_fk_location'])">location_id</text><title>location_id
+* int
+Here is the foriegn-key of the location. Defining the Area that the drone is able to deliver to.</title></a>
+<a xlink:href='#drone.location_id'><use id='ref' x='132' y='268' xlink:href='#ref'/><title>Referred by location ( location_id ) 
+Referred by location ( location_id ) </title></a>
+
+<!-- ============= Table 'coordinates' ============= -->
+<rect class='table' x='48' y='376' width='128' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 48.00 404.00 L 48.00 384.00 Q 48.00 376.00 56.00 376.00 L 168.00 376.00 Q 176.00 376.00 176.00 384.00 L 176.00 404.00 L48.00 404.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='48' y='376' width='128' height='112' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='48.000000' y1='404.000000' x2='176.000000' y2='404.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='64.000000' y1='404.000000' x2='64.000000' y2='488.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='164.000000' y1='404.000000' x2='164.000000' y2='488.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#coordinates'><text x='76' y='396'>coordinates</text><title>Table tacodrone.coordinates
+Here are the longitude and latitude coordinates for each geo_fence. Note the coordinate_id indicates the priority or the order of the coordinates per location id.</title></a>
+  <use id='nn' x='50' y='413' xlink:href='#nn'/><a xlink:href='#coordinates.coordinates_id'><use id='pk' x='50' y='412' xlink:href='#pk'/><title>Pk pk_coordinates ( coordinates_id ) </title></a>
+<a xlink:href='#coordinates.coordinates_id'><text id='tacodrone.coordinates.coordinates_id' x='67' y='423'>coordinates_id</text><title>coordinates_id
+* int
+Here is the coordinate_id for the geo_fencing of the map. It is an Auto-Increment function.</title></a>
+  <use id='nn' x='50' y='429' xlink:href='#nn'/><a xlink:href='#coordinates.lat_cord'><text id='tacodrone.coordinates.lat_cord' x='67' y='439'>lat_cord</text><title>lat_cord
+* float(20,17)
+Here is the lat_coordinate (Latitude).</title></a>
+  <a xlink:href='#coordinates.long_coordinates'><text id='tacodrone.coordinates.long_coordinates' x='67' y='455'>long_coordinates</text><title>long_coordinates
+float(20,17)
+Here is the long_coordinate (Longitude).</title></a>
+  <use id='nn' x='50' y='461' xlink:href='#nn'/><a xlink:href='#coordinates.location_id'><use id='unq' x='50' y='460' xlink:href='#unq'/><title>Unq pk_coordinates_0 ( location_id ) </title></a>
+<a xlink:href='#coordinates.location_id'><text id='tacodrone.coordinates.location_id' x='67' y='471' onmouseover="hghl(['location_fk_location_0','location_fk_location_0'])" onmouseout="uhghl(['location_fk_location_0','location_fk_location_0'])">location_id</text><title>location_id
+* int
+A foriegn-key to the location object.</title></a>
+<a xlink:href='#coordinates.location_id'><use id='ref' x='164' y='460' xlink:href='#ref'/><title>Referred by location ( location_id ) 
+Referred by location ( location_id ) </title></a>
+
+<!-- ============= Table 'location' ============= -->
+<rect class='table' x='288' y='248' width='128' height='80' rx='8' ry='8' style='stroke:none'/>
+<path d='M 288.00 276.00 L 288.00 256.00 Q 288.00 248.00 296.00 248.00 L 408.00 248.00 Q 416.00 248.00 416.00 256.00 L 416.00 276.00 L288.00 276.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='288' y='248' width='128' height='80' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='288.000000' y1='276.000000' x2='416.000000' y2='276.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='304.000000' y1='276.000000' x2='304.000000' y2='328.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='404.000000' y1='276.000000' x2='404.000000' y2='328.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#location'><text x='326' y='268'>location</text><title>Table tacodrone.location
+This is the location table. It contains the coordinates that the drone can fly to.</title></a>
+  <use id='nn' x='290' y='285' xlink:href='#nn'/><a xlink:href='#location.location_id'><use id='pk' x='290' y='284' xlink:href='#pk'/><title>Pk pk_location ( location_id ) </title></a>
+<a xlink:href='#location.location_id'><text id='tacodrone.location.location_id' x='307' y='295' onmouseover="hghl(['location_fk_location','location_fk_location_0','location_fk_location_1'])" onmouseout="uhghl(['location_fk_location','location_fk_location_0','location_fk_location_1'])">location_id</text><title>location_id
+* int
+Here is a foriegn-key defined for the location. Its an identifier and it has Auto-Increment capabilities.</title></a>
+<a xlink:href='#location.location_id'><use id='fk' x='404' y='284' xlink:href='#fk'/><title>References drone ( location_id ) 
+References coordinates ( location_id ) 
+References taco ( location_id ) </title></a>
+  <a xlink:href='#location.location_name'><text id='tacodrone.location.location_name' x='307' y='311'>location_name</text><title>location_name
+varchar(100)
+Here is the name of the location specified.</title></a>
+
+<!-- ============= Table 'taco_request' ============= -->
+<rect class='table' x='560' y='296' width='128' height='144' rx='8' ry='8' style='stroke:none'/>
+<path d='M 560.00 324.00 L 560.00 304.00 Q 560.00 296.00 568.00 296.00 L 680.00 296.00 Q 688.00 296.00 688.00 304.00 L 688.00 324.00 L560.00 324.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='560' y='296' width='128' height='144' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='560.000000' y1='324.000000' x2='688.000000' y2='324.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='576.000000' y1='324.000000' x2='576.000000' y2='440.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='676.000000' y1='324.000000' x2='676.000000' y2='440.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#taco_request'><text x='584' y='316'>taco_request</text><title>Table tacodrone.taco_request
+All the user requests to deliver tacos are kept in this database.</title></a>
+  <use id='nn' x='562' y='333' xlink:href='#nn'/><a xlink:href='#taco_request.taco_request_id'><use id='pk' x='562' y='332' xlink:href='#pk'/><title>Pk pk_taco_request ( taco_request_id ) </title></a>
+<a xlink:href='#taco_request.taco_request_id'><text id='tacodrone.taco_request.taco_request_id' x='579' y='343' onmouseover="hghl(['taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
+* int
+This is a unique identifier of the taco request. It helps uniquely identify taco requests so that the drone can deliver tacos more effectively.</title></a>
+<a xlink:href='#taco_request.taco_request_id'><use id='fk' x='676' y='332' xlink:href='#fk'/><title>References fulfilled request ( taco_request_id ) </title></a>
+  <use id='nn' x='562' y='349' xlink:href='#nn'/><a xlink:href='#taco_request.longitude'><text id='tacodrone.taco_request.longitude' x='579' y='359'>longitude</text><title>longitude
+* float(20,17)
+This is the longitude of the delivery.</title></a>
+  <use id='nn' x='562' y='365' xlink:href='#nn'/><a xlink:href='#taco_request.latitude'><text id='tacodrone.taco_request.latitude' x='579' y='375'>latitude</text><title>latitude
+* float(20,17)
+This is the latitude for the delivery.</title></a>
+  <use id='nn' x='562' y='381' xlink:href='#nn'/><a xlink:href='#taco_request.created'><text id='tacodrone.taco_request.created' x='579' y='391'>created</text><title>created
+* timestamp
+This is the timestamp that the request was created, for delivery purposes.</title></a>
+  <use id='nn' x='562' y='397' xlink:href='#nn'/><a xlink:href='#taco_request.taco_type'><text id='tacodrone.taco_request.taco_type' x='579' y='407'>taco_type</text><title>taco_type
+* enum('beef','vegetarian','chicken') 
+This is the taco_type enumerated type.</title></a>
+  <use id='nn' x='562' y='413' xlink:href='#nn'/><a xlink:href='#taco_request.user_id'><use id='unq' x='562' y='412' xlink:href='#unq'/><title>Unq pk_taco_request_0 ( user_id ) </title></a>
+<a xlink:href='#taco_request.user_id'><text id='tacodrone.taco_request.user_id' x='579' y='423' onmouseover="hghl(['user_fk_user_0','user_fk_user_0'])" onmouseout="uhghl(['user_fk_user_0','user_fk_user_0'])">user_id</text><title>user_id
+* int
+This is a foriegn key that links to the user database.</title></a>
+<a xlink:href='#taco_request.user_id'><use id='ref' x='676' y='412' xlink:href='#ref'/><title>Referred by user ( user_id ) 
+Referred by user ( user_id ) </title></a>
+
+<!-- ============= Table 'fulfilled request' ============= -->
+<rect class='table' x='400' y='40' width='144' height='112' rx='8' ry='8' style='stroke:none'/>
+<path d='M 400.00 68.00 L 400.00 48.00 Q 400.00 40.00 408.00 40.00 L 536.00 40.00 Q 544.00 40.00 544.00 48.00 L 544.00 68.00 L400.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='400' y='40' width='144' height='112' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='400.000000' y1='68.000000' x2='544.000000' y2='68.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='416.000000' y1='68.000000' x2='416.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='532.000000' y1='68.000000' x2='532.000000' y2='152.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#fulfilled request'><text x='422' y='60'>fulfilled request</text><title>Table tacodrone.fulfilled request
+Here is the table when the drone fulfills the delivery request.</title></a>
+  <use id='nn' x='402' y='77' xlink:href='#nn'/><a xlink:href='#fulfilled request.fulfilled_request_id'><use id='pk' x='402' y='76' xlink:href='#pk'/><title>Pk pk_fulfilled request ( fulfilled_request_id ) </title></a>
+<a xlink:href='#fulfilled request.fulfilled_request_id'><text id='tacodrone.fulfilled request.fulfilled_request_id' x='419' y='87'>fulfilled_request_id</text><title>fulfilled_request_id
+* int
+Here is the unique identifier for fulfilling the request. It is an Auto Increment field meaning that it doesn't need to be included in the request.</title></a>
+  <a xlink:href='#fulfilled request.status'><text id='tacodrone.fulfilled request.status' x='419' y='103'>status</text><title>status
+enum('not-delivered','delivered') 
+Here is the status of the taco delivery of the drone</title></a>
+  <use id='nn' x='402' y='109' xlink:href='#nn'/><a xlink:href='#fulfilled request.taco_request_id'><use id='unq' x='402' y='108' xlink:href='#unq'/><title>Unq pk_fulfilled request_0 ( taco_request_id ) </title></a>
+<a xlink:href='#fulfilled request.taco_request_id'><text id='tacodrone.fulfilled request.taco_request_id' x='419' y='119' onmouseover="hghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])" onmouseout="uhghl(['taco_request_fk_taco_request','taco_request_fk_taco_request'])">taco_request_id</text><title>taco_request_id
+* int
+Here is the foriegn key of taco_request.</title></a>
+<a xlink:href='#fulfilled request.taco_request_id'><use id='ref' x='532' y='108' xlink:href='#ref'/><title>Referred by taco_request ( taco_request_id ) 
+Referred by taco_request ( taco_request_id ) </title></a>
+  <use id='nn' x='402' y='125' xlink:href='#nn'/><a xlink:href='#fulfilled request.drone_id'><use id='unq' x='402' y='124' xlink:href='#unq'/><title>Unq pk_fulfilled request_1 ( drone_id ) </title></a>
+<a xlink:href='#fulfilled request.drone_id'><text id='tacodrone.fulfilled request.drone_id' x='419' y='135' onmouseover="hghl(['drone_fk_drone_0','drone_fk_drone_0'])" onmouseout="uhghl(['drone_fk_drone_0','drone_fk_drone_0'])">drone_id</text><title>drone_id
+* int
+Here is the foriegn key for the drone that delivered the particular taco.</title></a>
+<a xlink:href='#fulfilled request.drone_id'><use id='ref' x='532' y='124' xlink:href='#ref'/><title>Referred by drone ( drone_id ) 
+Referred by drone ( drone_id ) </title></a>
+
+<!-- ============= Table 'taco' ============= -->
+<rect class='table' x='592' y='40' width='96' height='128' rx='8' ry='8' style='stroke:none'/>
+<path d='M 592.00 68.00 L 592.00 48.00 Q 592.00 40.00 600.00 40.00 L 680.00 40.00 Q 688.00 40.00 688.00 48.00 L 688.00 68.00 L592.00 68.00 ' style='fill:url(#tbg_bcd5f1);stroke:1;stroke-opacity:0.1;' />
+<rect class='table' x='592' y='40' width='96' height='128' rx='8' ry='8' style='fill:none;stroke:#a0bee0'/>
+<line class='delim' x1='592.000000' y1='68.000000' x2='688.000000' y2='68.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='608.000000' y1='68.000000' x2='608.000000' y2='168.000000' style='stroke:#a0bee0'/>
+<line class='delim' x1='676.000000' y1='68.000000' x2='676.000000' y2='168.000000' style='stroke:#a0bee0'/>
+<a xlink:href='#taco'><text x='624' y='60'>taco</text><title>Table tacodrone.taco
+Taco DB, to enter the amount of tacos avaliable to deliver.</title></a>
+  <use id='nn' x='594' y='77' xlink:href='#nn'/><a xlink:href='#taco.taco_id'><use id='pk' x='594' y='76' xlink:href='#pk'/><title>Pk pk_taco ( taco_id ) </title></a>
+<a xlink:href='#taco.taco_id'><text id='tacodrone.taco.taco_id' x='611' y='87'>taco_id</text><title>taco_id
+* int
+Here is a unique_id for the taco. This member is Auto-Increment.</title></a>
+  <use id='nn' x='594' y='93' xlink:href='#nn'/><a xlink:href='#taco.taco_type'><text id='tacodrone.taco.taco_type' x='611' y='103'>taco_type</text><title>taco_type
+* enum('beef','veggie','chicken') 
+Here is the enumerated type of tacos listed.</title></a>
+  <use id='nn' x='594' y='109' xlink:href='#nn'/><a xlink:href='#taco.number'><text id='tacodrone.taco.number' x='611' y='119'>number</text><title>number
+* int
+Here is the number of the type of tacos avaliable.</title></a>
+  <use id='nn' x='594' y='125' xlink:href='#nn'/><a xlink:href='#taco.created'><text id='tacodrone.taco.created' x='611' y='135'>created</text><title>created
+* datetime
+Here is the date that the taco entry was created. It stores the date that the tacos were made.</title></a>
+  <use id='nn' x='594' y='141' xlink:href='#nn'/><a xlink:href='#taco.location_id'><use id='unq' x='594' y='140' xlink:href='#unq'/><title>Unq pk_taco_0 ( location_id ) </title></a>
+<a xlink:href='#taco.location_id'><text id='tacodrone.taco.location_id' x='611' y='151' onmouseover="hghl(['location_fk_location_1','location_fk_location_1'])" onmouseout="uhghl(['location_fk_location_1','location_fk_location_1'])">location_id</text><title>location_id
+* int
+This is the location where the tacos are located. It is a foriegn key linked to the location DB.</title></a>
+<a xlink:href='#taco.location_id'><use id='ref' x='676' y='140' xlink:href='#ref'/><title>Referred by location ( location_id ) 
+Referred by location ( location_id ) </title></a>
 
 </g></svg></div>
 
-
-<br/><br/>
-<div class='section-header'><a name='fulfilled request'><h2>Table fulfilled request</h2></a></div>
-<table class='bordered'>
-<thead>
-<tr><th colspan='4'>Columns</a></th></tr>
-<tr><td colspan='3'>Here is the table when the drone fulfills the delivery request&#46; </td></tr>
-</thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
-		<td><a name='fulfilled request.fulfilled_request_id'>fulfilled&#95;request&#95;id</a></td>
-		<td> int  AUTOINCREMENT  </td>
-		<td> Here is the unique identifier for fulfilling the request&#46; It is an Auto Increment field meaning that it doesn&#39;t need to be included in the request&#46; </td>
-	</tr>
-	<tr>
-		<td>&nbsp;</td>
-		<td><a name='fulfilled request.status'>status</a></td>
-		<td> enum   </td>
-		<td> Here is the status of the taco delivery of the drone </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
-		<td><a name='fulfilled request.taco_request_id'>taco&#95;request&#95;id</a></td>
-		<td> int   </td>
-		<td> Here is the foriegn key of taco&#95;request&#46; </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
-		<td><a name='fulfilled request.drone_id'>drone&#95;id</a></td>
-		<td> int   </td>
-		<td> Here is the foriegn key for the drone that delivered the particular taco&#46; </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;fulfilled request</td>
-		<td> ON fulfilled&#95;request&#95;id</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;0</td>
-		<td> ON taco&#95;request&#95;id</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;1</td>
-		<td> ON drone&#95;id</td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table>
 
 <br/><br/>
 <div class='section-header'><a name='session'><h2>Table session</h2></a></div>
@@ -508,105 +564,43 @@ Here is the access password for the drone, to make it autonomously deliver.</tit
 <tr><td colspan='3'>This is the session table&#46; It holds the drone and the user sessions to keep track of who&#39;s logged in and who&#39;s logged out&#46; </td></tr>
 </thead>
 <tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
-		<td><a name='session.session_id'>session&#95;id</a></td>
-		<td> int  AUTOINCREMENT  </td>
-		<td> Auto Increment session identifier&#44; keeps track of the number of active sessions&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='session.token'>token</a></td>
-		<td> varchar&#40; 255 &#41;   </td>
-		<td> Keeps track of the active session tokens&#46; </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
-		<td><a name='session.user_id'>user&#95;id</a></td>
-		<td> int   </td>
-		<td> This is the fk that keeps track of the user&#95;id&#39;s&#46; Either this one or the drone&#95;id is mandatory&#46; </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
-		<td><a name='session.drone_id'>drone&#95;id</a></td>
-		<td> int   </td>
-		<td> This is the fk that keeps track of the drone&#95;id&#39;s&#46; Either this one or the user&#95;id is mandatory&#46; </td>
-	</tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+    <td><a name='session.session_id'>session&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Auto Increment session identifier&#44; keeps track of the number of active sessions&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='session.token'>token</a></td>
+    <td> varchar&#40; 255 &#41;   </td>
+    <td> Keeps track of the active session tokens&#46; </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='session.user_id'>user&#95;id</a></td>
+    <td> int   </td>
+    <td> This is the fk that keeps track of the user&#95;id&#39;s&#46; Either this one or the drone&#95;id is mandatory&#46; </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='session.drone_id'>drone&#95;id</a></td>
+    <td> int   </td>
+    <td> This is the fk that keeps track of the drone&#95;id&#39;s&#46; Either this one or the user&#95;id is mandatory&#46; </td>
+  </tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;session</td>
-		<td> ON session&#95;id</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;0</td>
-		<td> ON user&#95;id</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;1</td>
-		<td> ON drone&#95;id</td>
-		<td>  </td>
-	</tr>
-</tbody>
-</table>
-
-<br/><br/>
-<div class='section-header'><a name='taco_request'><h2>Table taco_request</h2></a></div>
-<table class='bordered'>
-<thead>
-<tr><th colspan='4'>Columns</a></th></tr>
-<tr><td colspan='3'>All the user requests to deliver tacos are kept in this database&#46; </td></tr>
-</thead>
-<tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='taco_request.taco_request_id'>taco&#95;request&#95;id</a></td>
-		<td> int  AUTOINCREMENT  </td>
-		<td> This is a unique identifier of the taco request&#46; It helps uniquely identify taco requests so that the drone can deliver tacos more effectively&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='taco_request.longitude'>longitude</a></td>
-		<td> float&#40; 20&#44; 17 &#41;   </td>
-		<td> This is the longitude of the delivery&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='taco_request.latitude'>latitude</a></td>
-		<td> float&#40; 20&#44; 17 &#41;   </td>
-		<td> This is the latitude for the delivery&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='taco_request.created'>created</a></td>
-		<td> timestamp   </td>
-		<td> This is the timestamp that the request was created&#44; for delivery purposes&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='taco_request.taco_type'>taco&#95;type</a></td>
-		<td> enum   </td>
-		<td> This is the taco&#95;type enumerated type&#46; </td>
-	</tr>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
-		<td><a name='taco_request.user_id'>user&#95;id</a></td>
-		<td> int   </td>
-		<td> This is a foriegn key that links to the user database&#46; </td>
-	</tr>
-<tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;taco&#95;request</td>
-		<td> ON taco&#95;request&#95;id</td>
-		<td>  </td>
-	</tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;taco&#95;request&#95;0</td>
-		<td> ON user&#95;id</td>
-		<td>  </td>
-	</tr>
-<tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_taco_request</td>
-		<td > ( taco&#95;request&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (taco&#95;request&#95;id) </td>
-		<td> Here is the foriegn&#95;key for the taco&#95;request&#46; </td>
-	</tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;session</td>
+    <td> ON session&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;0</td>
+    <td> ON user&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;session&#95;1</td>
+    <td> ON drone&#95;id</td>
+    <td>  </td>
+  </tr>
 </tbody>
 </table>
 
@@ -618,52 +612,52 @@ Here is the access password for the drone, to make it autonomously deliver.</tit
 <tr><td colspan='3'>This is the table that handles all the data for the users that are to use our mobile app to order tacos&#46; </td></tr>
 </thead>
 <tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='user.user_id'>user&#95;id</a></td>
-		<td> int  AUTOINCREMENT  </td>
-		<td> The user&#95;id uniquely identifies Users&#46; Its an AutoIncrement field meaning that on user creation it need not be specified&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='user.facebook_id'>facebook&#95;id</a></td>
-		<td> varchar&#40; 255 &#41;   </td>
-		<td> This field stored the value of the facebook id for the user&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='user.first_name'>first&#95;name</a></td>
-		<td> varchar&#40; 35 &#41;   </td>
-		<td> Stores the first name of the user&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='user.last_name'>last&#95;name</a></td>
-		<td> varchar&#40; 35 &#41;   </td>
-		<td> Stores the last name of the user&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='user.email'>email</a></td>
-		<td> varchar&#40; 100 &#41;   </td>
-		<td> Here is the email of the user&#46; </td>
-	</tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+    <td><a name='user.user_id'>user&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> The user&#95;id uniquely identifies Users&#46; Its an AutoIncrement field meaning that on user creation it need not be specified&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='user.facebook_id'>facebook&#95;id</a></td>
+    <td> varchar&#40; 255 &#41;   </td>
+    <td> This field stored the value of the facebook id for the user&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='user.first_name'>first&#95;name</a></td>
+    <td> varchar&#40; 35 &#41;   </td>
+    <td> Stores the first name of the user&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='user.last_name'>last&#95;name</a></td>
+    <td> varchar&#40; 35 &#41;   </td>
+    <td> Stores the last name of the user&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='user.email'>email</a></td>
+    <td> varchar&#40; 100 &#41;   </td>
+    <td> Here is the email of the user&#46; </td>
+  </tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;user</td>
-		<td> ON user&#95;id</td>
-		<td>  </td>
-	</tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;user</td>
+    <td> ON user&#95;id</td>
+    <td>  </td>
+  </tr>
 <tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user</td>
-		<td > ( user&#95;id ) ref <a href='#session'>session</a> (user&#95;id) </td>
-		<td> This foriegn key contains the value of the user&#95;id from the user database&#46; </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user_0</td>
-		<td > ( user&#95;id ) ref <a href='#taco&#95;request'>taco&#95;request</a> (user&#95;id) </td>
-		<td> Foriegn Key for the user&#95;id in the taco requests database&#46; </td>
-	</tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user</td>
+    <td > ( user&#95;id ) ref <a href='#session'>session</a> (user&#95;id) </td>
+    <td> This foriegn key contains the value of the user&#95;id from the user database&#46; </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_user_0</td>
+    <td > ( user&#95;id ) ref <a href='#taco&#95;request'>taco&#95;request</a> (user&#95;id) </td>
+    <td> Foriegn Key for the user&#95;id in the taco requests database&#46; </td>
+  </tr>
 </tbody>
 </table>
 
@@ -675,33 +669,293 @@ Here is the access password for the drone, to make it autonomously deliver.</tit
 <tr><td colspan='3'>Here is the table defining the attributes for a drone&#46; </td></tr>
 </thead>
 <tbody>
-	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
-		<td><a name='drone.drone_id'>drone&#95;id</a></td>
-		<td> int  AUTOINCREMENT  </td>
-		<td> Here is the drone identifier&#46; Its an Auto Increment field so it doesn&#39;t need to be included in the creation of a new drone entry&#46; </td>
-	</tr>
-	<tr>
-		<td>*</td>
-		<td><a name='drone.password'>password</a></td>
-		<td> varchar&#40; 255 &#41;   </td>
-		<td> Here is the access password for the drone&#44; to make it autonomously deliver&#46; </td>
-	</tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+    <td><a name='drone.drone_id'>drone&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Here is the drone identifier&#46; Its an Auto Increment field so it doesn&#39;t need to be included in the creation of a new drone entry&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='drone.password'>password</a></td>
+    <td> varchar&#40; 255 &#41;   </td>
+    <td> Here is the access password for the drone&#44; to make it autonomously deliver&#46; </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='drone.location_id'>location&#95;id</a></td>
+    <td> int   </td>
+    <td> Here is the foriegn&#45;key of the location&#46; Defining the Area that the drone is able to deliver to&#46; </td>
+  </tr>
 <tr><th colspan='4'>Indexes</th></tr>
-	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;drone</td>
-		<td> ON drone&#95;id</td>
-		<td>  </td>
-	</tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;drone</td>
+    <td> ON drone&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;drone&#95;0</td>
+    <td> ON location&#95;id</td>
+    <td>  </td>
+  </tr>
 <tr><th colspan='4'>Foreign Keys</th></tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone</td>
-		<td > ( drone&#95;id ) ref <a href='#session'>session</a> (drone&#95;id) </td>
-		<td> This foriegn key refers to the drone&#95;id from the drone DB&#46; </td>
-	</tr>
-	<tr>
-		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone_0</td>
-		<td > ( drone&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (drone&#95;id) </td>
-		<td> Here is the foriegn key for the drone object </td>
-	</tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone</td>
+    <td > ( drone&#95;id ) ref <a href='#session'>session</a> (drone&#95;id) </td>
+    <td> This foriegn key refers to the drone&#95;id from the drone DB&#46; </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_drone_0</td>
+    <td > ( drone&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (drone&#95;id) </td>
+    <td> Here is the foriegn key for the drone object </td>
+  </tr>
 </tbody>
 </table>
+
+<br/><br/>
+<div class='section-header'><a name='coordinates'><h2>Table coordinates</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>Here are the longitude and latitude coordinates for each geo&#95;fence&#46; Note the coordinate&#95;id indicates the priority or the order of the coordinates per location id&#46; </td></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+    <td><a name='coordinates.coordinates_id'>coordinates&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Here is the coordinate&#95;id for the geo&#95;fencing of the map&#46; It is an Auto&#45;Increment function&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='coordinates.lat_cord'>lat&#95;cord</a></td>
+    <td> float&#40; 20&#44; 17 &#41;   </td>
+    <td> Here is the lat&#95;coordinate &#40;Latitude&#41;&#46; </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a name='coordinates.long_coordinates'>long&#95;coordinates</a></td>
+    <td> float&#40; 20&#44; 17 &#41;   </td>
+    <td> Here is the long&#95;coordinate &#40;Longitude&#41;&#46; </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='coordinates.location_id'>location&#95;id</a></td>
+    <td> int   </td>
+    <td> A foriegn&#45;key to the location object&#46; </td>
+  </tr>
+<tr><th colspan='4'>Indexes</th></tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;coordinates</td>
+    <td> ON coordinates&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;coordinates&#95;0</td>
+    <td> ON location&#95;id</td>
+    <td>  </td>
+  </tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='location'><h2>Table location</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>This is the location table&#46; It contains the coordinates that the drone can fly to&#46; </td></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+    <td><a name='location.location_id'>location&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Here is a foriegn&#45;key defined for the location&#46; Its an identifier and it has Auto&#45;Increment capabilities&#46; </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a name='location.location_name'>location&#95;name</a></td>
+    <td> varchar&#40; 100 &#41;   </td>
+    <td> Here is the name of the location specified&#46; </td>
+  </tr>
+<tr><th colspan='4'>Indexes</th></tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;location</td>
+    <td> ON location&#95;id</td>
+    <td>  </td>
+  </tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_location</td>
+    <td > ( location&#95;id ) ref <a href='#drone'>drone</a> (location&#95;id) </td>
+    <td> Foriegn Key for the location&#95;id&#46; Where can the drone deliver&#63; </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_location_0</td>
+    <td > ( location&#95;id ) ref <a href='#coordinates'>coordinates</a> (location&#95;id) </td>
+    <td>  </td>
+  </tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_location_1</td>
+    <td > ( location&#95;id ) ref <a href='#taco'>taco</a> (location&#95;id) </td>
+    <td> Here is the location&#95;id for the tacos&#46; </td>
+  </tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='taco_request'><h2>Table taco_request</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>All the user requests to deliver tacos are kept in this database&#46; </td></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+    <td><a name='taco_request.taco_request_id'>taco&#95;request&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> This is a unique identifier of the taco request&#46; It helps uniquely identify taco requests so that the drone can deliver tacos more effectively&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco_request.longitude'>longitude</a></td>
+    <td> float&#40; 20&#44; 17 &#41;   </td>
+    <td> This is the longitude of the delivery&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco_request.latitude'>latitude</a></td>
+    <td> float&#40; 20&#44; 17 &#41;   </td>
+    <td> This is the latitude for the delivery&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco_request.created'>created</a></td>
+    <td> timestamp   </td>
+    <td> This is the timestamp that the request was created&#44; for delivery purposes&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco_request.taco_type'>taco&#95;type</a></td>
+    <td> enum   </td>
+    <td> This is the taco&#95;type enumerated type&#46; </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='taco_request.user_id'>user&#95;id</a></td>
+    <td> int   </td>
+    <td> This is a foriegn key that links to the user database&#46; </td>
+  </tr>
+<tr><th colspan='4'>Indexes</th></tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;taco&#95;request</td>
+    <td> ON taco&#95;request&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;taco&#95;request&#95;0</td>
+    <td> ON user&#95;id</td>
+    <td>  </td>
+  </tr>
+<tr><th colspan='4'>Foreign Keys</th></tr>
+  <tr>
+    <td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_taco_request</td>
+    <td > ( taco&#95;request&#95;id ) ref <a href='#fulfilled request'>fulfilled request</a> (taco&#95;request&#95;id) </td>
+    <td> Here is the foriegn&#95;key for the taco&#95;request&#46; </td>
+  </tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='fulfilled request'><h2>Table fulfilled request</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>Here is the table when the drone fulfills the delivery request&#46; </td></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+    <td><a name='fulfilled request.fulfilled_request_id'>fulfilled&#95;request&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Here is the unique identifier for fulfilling the request&#46; It is an Auto Increment field meaning that it doesn&#39;t need to be included in the request&#46; </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><a name='fulfilled request.status'>status</a></td>
+    <td> enum   </td>
+    <td> Here is the status of the taco delivery of the drone </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='fulfilled request.taco_request_id'>taco&#95;request&#95;id</a></td>
+    <td> int   </td>
+    <td> Here is the foriegn key of taco&#95;request&#46; </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='fulfilled request.drone_id'>drone&#95;id</a></td>
+    <td> int   </td>
+    <td> Here is the foriegn key for the drone that delivered the particular taco&#46; </td>
+  </tr>
+<tr><th colspan='4'>Indexes</th></tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;fulfilled request</td>
+    <td> ON fulfilled&#95;request&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;0</td>
+    <td> ON taco&#95;request&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;fulfilled request&#95;1</td>
+    <td> ON drone&#95;id</td>
+    <td>  </td>
+  </tr>
+</tbody>
+</table>
+
+<br/><br/>
+<div class='section-header'><a name='taco'><h2>Table taco</h2></a></div>
+<table class='bordered'>
+<thead>
+<tr><th colspan='4'>Columns</a></th></tr>
+<tr><td colspan='3'>Taco DB&#44; to enter the amount of tacos avaliable to deliver&#46; </td></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
+    <td><a name='taco.taco_id'>taco&#95;id</a></td>
+    <td> int  AUTOINCREMENT  </td>
+    <td> Here is a unique&#95;id for the taco&#46; This member is Auto&#45;Increment&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco.taco_type'>taco&#95;type</a></td>
+    <td> enum   </td>
+    <td> Here is the enumerated type of tacos listed&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco.number'>number</a></td>
+    <td> int   </td>
+    <td> Here is the number of the type of tacos avaliable&#46; </td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td><a name='taco.created'>created</a></td>
+    <td> datetime   </td>
+    <td> Here is the date that the taco entry was created&#46; It stores the date that the tacos were made&#46; </td>
+  </tr>
+  <tr>
+    <td>*<svg width='14' height='14'><use xlink:href='#unq'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+    <td><a name='taco.location_id'>location&#95;id</a></td>
+    <td> int   </td>
+    <td> This is the location where the tacos are located&#46; It is a foriegn key linked to the location DB&#46; </td>
+  </tr>
+<tr><th colspan='4'>Indexes</th></tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;taco</td>
+    <td> ON taco&#95;id</td>
+    <td>  </td>
+  </tr>
+  <tr>    <td><svg width='14' height='14'><use xlink:href='#unq'/></svg></td><td>pk&#95;taco&#95;0</td>
+    <td> ON location&#95;id</td>
+    <td>  </td>
+  </tr>
+</tbody>
+</table>
+
+<p align='right'><a href='http://www.dbschema.com' style='color:#aaa'>Powered by DbSchema</a></p></body></html>
