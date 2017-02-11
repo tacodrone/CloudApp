@@ -234,7 +234,7 @@ function define_taco(location){
 
   });
 
-  taco_defined.belongsTo(location, [foreignKey: 'location_id']);
+  taco_defined.belongsTo(location, {foreignKey: 'location_id'});
 
   return taco_defined;
 
@@ -253,7 +253,7 @@ function define_taco_request(User) {
                   taco_type: Sequelize.ENUM('Beef', 'Veggie', 'Chicken'),
   });
 
-  taco_request_defined.belongsTo(User, [foreignKey: 'user_id']);
+  taco_request_defined.belongsTo(User, {foreignKey: 'user_id'});
 
   return taco_request_defined;
 
