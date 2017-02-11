@@ -265,7 +265,7 @@ user_db.sync().then(function(user){
 	location_db.sync().then(function(location){
 		drone_db = define_drone(location_db);
 		drone_db.sync().then(function(drone){
-			taco_db define_taco(location_db);
+			taco_db = define_taco(location_db);
 			taco_db.sync().then(function(taco){
 				taco_request_db = define_taco_request(user_db);
 				taco_request_db.sync().then(function(taco_request){
