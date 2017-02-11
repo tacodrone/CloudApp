@@ -78,6 +78,21 @@ function basicAuth(req, res, next) {
 	};
 }
 
+/*
+
+	Keep track of done DB's
+
+	user: 				done 	[Abhishek]
+	coordinates:  		done 	[Abhishek]
+	location:
+	session:
+	fulfilled_request:
+	taco_request:
+	taco:
+	drone:
+
+*/
+
 function define_user(){
 	
 	return 	sequalize.define('User',	{		
