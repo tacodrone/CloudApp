@@ -138,5 +138,65 @@ app.get("/", function(req, res) {
 	res.send("works")
 });
 
+function define_location(){
+	return 	sequalize.define('Location',	{		
+				location_id: 	{
+								type: Sequelize.INTEGER,
+								primaryKey: true,
+								autoIncrement: true
+							},
+								
+				
+
+				location_name: Sequelize.STRING,
+				
+
+			},	{
+				freezeTableName: true
+			});
+
+
+function define_session(user, drone){
+	var Session_defined =	sequalize.define('Location',	{		
+								session_id: 	{
+												type: Sequelize.INTEGER,
+												primaryKey: true,
+												autoIncrement: true
+											},
+												
+								token: Sequelize.INTEGER
+
+								},	{
+								freezeTableName: true
+							});
+
+	Session_defined.belongsTo(user, {foreignKey: 'user_id'});
+	Session_defined.belongsTo(drone, {foreignKey: 'drone_id'});
+
+	return Session_defined;
+}
+
+}
+
+function define_fulfilled_request(){
+	var Fulfilled_request_defined =	sequalize.define('Location',	{		
+								fulfilled_request_id: 	{
+												type: Sequelize.INTEGER,
+												primaryKey: true,
+												autoIncrement: true
+											},
+												
+								status: Sequelize.ENUM("fulfilled", "active")
+
+								},	{
+								freezeTableName: true
+							});
+
+	Fulfilled request_defined.belongsTo(taco_request, {foreignKey: 'taco_request_id'});
+	Fulfilled request_defined.belongsTo(drone, {foreignKey: 'drone_id'});
+
+	return Fulfilled_request_defined;
+}
+}
 app.listen(port);
 console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + port);
