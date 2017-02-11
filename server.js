@@ -93,6 +93,15 @@ function basicAuth(req, res, next) {
 
 */
 
+var user_db;
+var coordinates_db;
+var location_db;
+var session_db;
+var fulfilled_request_db;
+var taco_request_db;
+var taco_db;
+var drone_db;
+
 function define_user(){
 	
 	return 	sequalize.define('User',	{		
@@ -134,9 +143,7 @@ function define_coordinates(location){
 	return Coordinates_defined;
 }
 
-app.get("/", function(req, res) {
-	res.send("works")
-});
+
 
 function define_location(){
 	return 	sequalize.define('Location',	{		
@@ -154,6 +161,7 @@ function define_location(){
 			},	{
 				freezeTableName: true
 			});
+}
 
 
 function define_session(user, drone){
@@ -176,9 +184,7 @@ function define_session(user, drone){
 	return Session_defined;
 }
 
-}
-
-function define_fulfilled_request(){
+function define_fulfilled_request(taco_request, drone){
 	var Fulfilled_request_defined =	sequalize.define('Location',	{		
 								fulfilled_request_id: 	{
 												type: Sequelize.INTEGER,
@@ -197,6 +203,91 @@ function define_fulfilled_request(){
 
 	return Fulfilled_request_defined;
 }
+
+
+function define_drone(location){
+  var drone_defined = sequalize.define('Drone', {
+                  drone_id: {
+                          type: Sequelize.INTEGER,
+                          primaryKey: true,
+                          autoIncrement: true
+                  },
+                  password: Sequelize.STRING,
+                });
+
+  drone_defined.belongsTo(location, {foreignKey: 'location_id'});
+
+  return drone_defined;
+
 }
+
+function define_taco(location){
+  var taco_defined = sequalize.define('Drone', {
+                  taco_id: {
+                          type: Sequelize.INTEGER,
+                          primaryKey: true,
+                          autoIncrement: true
+                  },
+                  taco_type: Sequelize.ENUM('Beef', 'Veggie', 'Chicken'),
+                  number: Sequelize.INTEGER,
+                  created: Sequelize.DATE,
+
+  });
+
+  taco_defined.belongsTo(location, [foreignKey: 'location_id']);
+
+  return taco_defined;
+
+}
+
+function define_taco_request(User) {
+  var taco_request_defined = Sequelize.define('Taco_request', {
+                  taco_request_id: {
+                            type: Sequelize.INTEGER,
+                            primaryKey: true,
+                            autoIncrement: true
+                  },
+                  longitude: Sequelize.FLOAT(20,17),
+                  latitude: Sequelize.FLOAT(20,17),
+                  created: Sequelize.DATE,
+                  taco_type: Sequelize.ENUM('Beef', 'Veggie', 'Chicken'),
+  });
+
+  taco_request_defined.belongsTo(User, [foreignKey: 'user_id']);
+
+  return taco_request_defined;
+
+}
+
+user_db = define_user();
+user_db.sync().then(function(user){
+	location_db = define_location()
+	location_db.sync().then(function(location){
+		drone_db = define_drone(location_db);
+		drone_db.sync().then(function(drone){
+			taco_db define_taco(location_db);
+			taco_db.sync().then(function(taco){
+				taco_request_db = define_taco_request(user_db);
+				taco_request_db.sync().then(function(taco_request){
+					coordinates_db = define_coordinates(location_db);
+					coordinates_db.sync().then(function(coordinates){
+						fulfilled_request_db = define_fulfilled_request(taco_request_db, drone_db);
+						fulfilled_request_db.sync().then(function(fulfilled_request){
+							session_db = define_session(user_db, drone_db);
+							session_db.sync().then(function(session){
+								console.log("done defining dbs")
+							});
+						});
+					});
+				});
+			});
+		});
+	});
+});
+
+app.get("/", function(req, res) {
+	res.send("works")
+});
+
 app.listen(port);
 console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + port);
