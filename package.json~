@@ -1,0 +1,38 @@
+{
+  "name": "cloud_app",
+  "version": "1.0.0",
+  "description": "Here is the Cloud App API for the Mobile Taco Delivery",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tacodrone/CloudApp.git"
+  },
+  "keywords": [
+    "Taco",
+    "Drone"
+  ],
+  "author": "Abhishek Pratapa, Morgan Chen, Ali Babool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tacodrone/CloudApp/issues"
+  },
+  "homepage": "https://github.com/tacodrone/CloudApp#readme",
+  "dependencies": {
+    "basic-auth": "^1.1.0",
+    "body-parser": "^1.16.1",
+    "checksum": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
+    "sequelize": "^3.30.2"
+  }
+}
