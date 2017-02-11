@@ -198,8 +198,8 @@ function define_fulfilled_request(taco_request, drone){
 								freezeTableName: true
 							});
 
-	Fulfilled request_defined.belongsTo(taco_request, {foreignKey: 'taco_request_id'});
-	Fulfilled request_defined.belongsTo(drone, {foreignKey: 'drone_id'});
+	Fulfilled_request_defined.belongsTo(taco_request, {foreignKey: 'taco_request_id'});
+	Fulfilled_request_defined.belongsTo(drone, {foreignKey: 'drone_id'});
 
 	return Fulfilled_request_defined;
 }
