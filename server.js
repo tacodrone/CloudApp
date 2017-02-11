@@ -241,7 +241,7 @@ function define_taco(location){
 }
 
 function define_taco_request(User) {
-  var taco_request_defined = Sequelize.define('Taco_request', {
+  var taco_request_defined = sequalize.define('Taco_request', {
                   taco_request_id: {
                             type: Sequelize.INTEGER,
                             primaryKey: true,
