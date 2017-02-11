@@ -40,6 +40,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+var port = ((deployment) ? (port = process.env.PORT || 80) : (port = process.env.PORT || 8092));
+
 var match = process.env.DATABASE_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
 
 var sequalize 	= 	new Sequelize(match[5], match[1], match[2], {
@@ -119,5 +121,5 @@ app.get("/", function(req, res) {
 	res.send("works")
 });
 
-app.listen(80);
-console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + 80);
+app.listen(port);
+console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + port);
