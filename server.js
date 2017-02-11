@@ -1,5 +1,7 @@
 // server.js
 
+var deployment = true;
+
 // Express import
 var express = require('express');
 var app = express();
