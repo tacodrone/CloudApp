@@ -120,4 +120,4 @@ app.get("/", function(req, res) {
 });
 
 app.listen(80);
-console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + port);
+console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + 80);
