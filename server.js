@@ -289,5 +289,9 @@ app.get("/", function(req, res) {
 	res.send("works")
 });
 
+app.post("/user/login", function(req, res) {
+	res.send("works")
+});
+
 app.listen(port);
 console.log('Magic happens at http://http://tacodrone-api.herokuapp.com:' + port);
