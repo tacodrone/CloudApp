@@ -290,7 +290,9 @@ app.get("/", function(req, res) {
 });
 
 app.post("/user/login", function(req, res) {
-	res.send("works");
+	var username = req.body.username || req.params.username;
+	var password = req.body.password || req.params.password;
+	res.send(username + " " + password);
 });
 
 app.listen(port);
