@@ -290,19 +290,20 @@ app.get("/", function(req, res) {
 });
 
 app.post("/user/login", function(req, res) {
-	var username = req.body.username || req.params.username;
-	var password = req.body.password || req.params.password;
+	var facebook_id_sent = req.body.facebook_id || req.params.facebook_id;
 	
-	// error checking
-	if(username == null || username == undefined) {
-		return res.send("Please provide Username");
+	if(facebook_id_sent == null || facebook_id_sent == undefined) {
+		return res.send("Please provide Facebook Id");
 	}
 
-	if(password == null || password == undefined) {
-		return res.send("Please provide Password");
-	}
-
-	res.send(username + " " + password);
+	return 	user_db.findOne({ where: { facebook_id: facebook_id_sent } }).then(function(response_value){
+				if (response_value == null) {
+					res.send("cannot find user");
+				}else{
+					res.send(facebook_id_sent + " Abhishek");
+				}
+			
+			});
 });
 
 app.listen(port);
