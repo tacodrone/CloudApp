@@ -289,7 +289,7 @@ app.get("/", function(req, res) {
 	res.send("works")
 });
 
-app.post("/user/login", function(req, res) {
+app.post("user/login", function(req, res) {
 	res.send("works")
 });
 
