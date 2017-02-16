@@ -292,6 +292,16 @@ app.get("/", function(req, res) {
 app.post("/user/login", function(req, res) {
 	var username = req.body.username || req.params.username;
 	var password = req.body.password || req.params.password;
+	
+	// error checking
+	if(username == null || username == undefined) {
+		return res.send("Please provide Username");
+	}
+
+	if(password == null || password == undefined) {
+		return res.send("Please provide Password");
+	}
+
 	res.send(username + " " + password);
 });
 
