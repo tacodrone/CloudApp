@@ -286,11 +286,11 @@ user_db.sync().then(function(user){
 });
 
 app.get("/", function(req, res) {
-	res.send("works")
+	res.send("works");
 });
 
-app.post("user/login", function(req, res) {
-	res.send("works")
+app.post("/user/login", function(req, res) {
+	res.send("works");
 });
 
 app.listen(port);
